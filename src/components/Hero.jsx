@@ -14,10 +14,10 @@ const HeroSection = () => {
           {/* Define Brighter Gradient for Stripes */}
           <defs>
             <linearGradient id="brightStripeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="pink" />  {/* Light Red */}
-              <stop offset="33%" stopColor="blue" />  {/* Light Blue */}
-              <stop offset="66%" stopColor="#b997f5" />  {/* Light Yellow */}
-              <stop offset="100%" stopColor="green" /> {/* Light Red */}
+              <stop offset="0%" stopColor="purple" />  {/* Light Red */}
+              <stop offset="33%" stopColor="#b997f5" />  {/* Light Blue */}
+              <stop offset="66%" stopColor="#b100f5" />  {/* Light Yellow */}
+              {/* Light Red */}
             </linearGradient>
           </defs>
 
@@ -42,7 +42,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 lg:w-1/2 text-center lg:text-left px-4 lg:px-12">
         <h1 className="space-y-2">
-          <span className="block text-5xl font-bold tracking-tight mt-10 text-white">
+          <span className="block text-5xl font-bold tracking-tight mt-20 lg:mt-5 text-white">
             Making Tax Filing 
             <span className="italic font-serif text-blue-300"> Easy</span>,
           </span>
