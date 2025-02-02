@@ -103,9 +103,9 @@ const NavBar = () => {
 
           {/* Desktop Get Started Button */}
                 <div className="hidden md:block">
-                <button className="bg-[#b997f5] text-neutral font-medium px-6 py-2.5 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#b997f5] focus:ring-offset-2 hover:bg-[#b997f5] relative overflow-hidden">
-                <span className="relative z-10">Get Started</span>
-                <div className="absolute inset-0 bg-[#b997f5] rounded-full opacity-30 animate-pulse"></div>
+                <button className="bg-purple-500 text-neutral font-medium px-6 py-2.5 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-offset-2 hover:bg-purple-500 relative overflow-hidden">
+                <span className="relative z-10 text-white">Get Started</span>
+                <div className="absolute inset-0 bg-purple-400 rounded-full opacity-30 animate-pulse"></div>
               </button>
 
           </div>
@@ -113,7 +113,7 @@ const NavBar = () => {
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4 md:hidden">
             {/* Mobile Get Started Button */}
-            <button className="bg-[#b997f5] hover:bg-[#b997f5] text-white font-medium px-4 py-2 rounded-lg cursor-pointer transition-all duration-200">
+            <button className="bg-purple-500 hover:bg-[#b997f5] text-white font-medium px-4 py-2 rounded-lg cursor-pointer transition-all duration-200">
               Get Started
             </button>
             
@@ -146,10 +146,14 @@ const NavBar = () => {
                       {section === 'company' && <Building2 className="w-5 h-5" />}
                       <span className="font-medium capitalize">{section}</span>
                     </div>
+                    
                     <ChevronRight 
                       className={`w-5 h-5 transition-transform duration-200 ${activeSection === section ? 'rotate-90' : ''}`}
                     />
+                    
                   </button>
+
+                  
                   
                   {/* Mobile Dropdown Content */}
                   {activeSection === section && (
@@ -162,10 +166,15 @@ const NavBar = () => {
                         >
                           {item.icon}
                           <span>{item.label}</span>
+                          
                         </a>
+                         
                       ))}
+                     
                     </div>
+                    
                   )}
+                 
                 </div>
               ))}
             </div>
