@@ -17,11 +17,11 @@ const ReadyToGetStarted = () => {
           </div>
 
           {/* Image Section without border */}
-          <div className="relative w-full max-w-sm lg:max-w-md">
+          <div className="relative w-full max-w-sm lg:max-w-md flex justify-center">
             <img
-              src="illu1.jpg"
+              src="illu1.jpg" // Your illustration
               alt="Illustration"
-              className="w-full h-auto -ml-16" // Negative margin to merge with white background
+              className="w-full h-auto rounded-lg" // Center the image
             />
           </div>
         </div>
