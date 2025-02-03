@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bell, User, Search, Home, FileText, ClipboardList, Sparkles, Wallet, TrendingUp, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
+import TaxHummerLogo from './TaxHummerLogo';
 
 const TaxApp = () => {
   return (
@@ -12,7 +13,7 @@ const TaxApp = () => {
         className="relative w-72 h-[600px] bg-white rounded-[3rem] shadow-2xl border-8 border-gray-300 overflow-hidden"
       >
         {/* Notch */}
-        <div className="absolute top-0 left-0 right-0 flex justify-center">
+        <div className="absolute top-0 left-0 right-0 flex justify-center z-10">
           <div className="w-40 h-6 bg-black rounded-b-2xl"></div>
         </div>
 
@@ -28,8 +29,7 @@ const TaxApp = () => {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2"
             >
-              <span className="text-purple-600 font-bold">TH</span>
-              <span className="text-purple-600">TAX HUMMER</span>
+              <TaxHummerLogo/>
             </motion.div>
             <div className="flex space-x-3">
               <motion.div

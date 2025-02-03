@@ -14,6 +14,7 @@ import {
   Headphones,
   ChevronRight
 } from 'lucide-react';
+import TaxHummerLogo from './TaxHummerLogo';
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -81,11 +82,8 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer">
-            <img
-              src="logo.jpg"
-              alt="logo.jpg"
-              className="h-8 w-auto hover:opacity-80 transition-opacity"
-            />
+           <TaxHummerLogo/>
+            
           </div>
 
           {/* Desktop Navigation */}

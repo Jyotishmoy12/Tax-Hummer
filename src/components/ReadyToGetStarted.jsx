@@ -12,7 +12,7 @@ const ReadyToGetStarted = () => {
               Ready to Get Started?
             </h2>
             <button className="bg-purple-600 text-white py-2 px-6 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300">
-              Get Started
+              Try for Free
             </button>
           </div>
 
