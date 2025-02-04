@@ -1,90 +1,86 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useMemo } from 'react';
 
 const WhyChooseUsAI = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Track image loading state
 
-  const contentVariants = {
-    initial: { opacity: 0, x: -30 },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: { type: 'spring', stiffness: 100, duration: 1.5 },
-    },
+  // Memoize floating points to prevent unnecessary recalculations
+  const floatingPoints = useMemo(() => {
+    return Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      top: `${Math.random() * 100}vh`,
+      left: `${Math.random() * 100}vw`,
+      color: ['red', 'blue', 'green', 'yellow', 'purple'][Math.floor(Math.random() * 5)],
+      duration: `${Math.random() * 6 + 4}s`,
+      delay: `${Math.random() * 2}s`,
+    }));
+  }, []);
+
+  // Handle the image onLoad event to mark it as loaded
+  const handleImageLoad = () => {
+    setIsLoading(false);
   };
 
   return (
     <div className="relative bg-white py-12 sm:py-16 px-4 sm:px-6 md:px-12 overflow-hidden">
-      {/* Floating Color Points */}
-      {[...Array(20)].map((_, i) => (
+      {/* Optimized Floating Points */}
+      {floatingPoints.map(({ id, top, left, color, duration, delay }) => (
         <div
-          key={i}
+          key={id}
           className="absolute rounded-full w-4 h-4 opacity-75 animate-float"
           style={{
-            top: `${Math.random() * 100}vh`,
-            left: `${Math.random() * 100}vw`,
-            backgroundColor: `${['red', 'blue', 'green', 'yellow', 'purple'][Math.floor(Math.random() * 5)]}`,
-            animationDuration: `${Math.random() * 6 + 4}s`, // Random duration
-            animationDelay: `${Math.random() * 2}s`, // Random delay
+            top,
+            left,
+            backgroundColor: color,
+            animationDuration: duration,
+            animationDelay: delay,
           }}
         />
       ))}
 
       <div className="flex flex-col sm:flex-row items-center justify-between max-w-full space-y-8 sm:space-y-0">
-        {/* Left Content */}
-        <motion.div
+        {/* Left Image Section */}
+        <div 
           className="w-full sm:w-1/2 justify-center overflow-hidden hidden sm:block"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            scale: isHovered ? 1.05 : 1,
-            transition: { duration: 0.5 },
-          }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <motion.img
-            src="AI.jpg"
-            alt="Tax Illustration"
-            className="w-full max-w-full sm:max-w-md object-contain sm:block lg:-my-10 lg:-mx-10"
-            loading='lazy'
-            whileHover={{
-              rotate: [0, -5, 5, 0],
-              scale: 0.5,
-              transition: { duration: 0.3 },
-            }}
-            style={{
-              pointerEvents: 'none', // Prevents interfering with hover area
-              maxWidth: '100%', // Ensure it doesn’t overflow container
-              maxHeight: '100%', // Prevents the image from going outside its container
-            }}
-          />
-        </motion.div>
-
-        {/* Right Content */}
-        <motion.div
-          className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium mb-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              transition: { delay: 0.5, type: 'spring', stiffness: 50 },
-            }}
+          <div 
+            className={`transform transition-all duration-300 ease-in-out ${
+              isHovered ? 'scale-105' : 'scale-100'
+            }`}
           >
+            {/* Show a loader until the image is loaded */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white opacity-75 z-10">
+                <div className="animate-spin rounded-full border-t-4 border-purple-600 w-8 h-8"></div>
+              </div>
+            )}
+
+            <img
+              src="AI.jpg"
+              alt="AI Tax Assistant"
+              className="w-full max-w-md mx-auto object-contain lg:-my-10 lg:-mx-10"
+              width={400}
+              height={320}
+              loading="lazy"
+              decoding="async"
+              onLoad={handleImageLoad} // Call this function when image is loaded
+            />
+          </div>
+        </div>
+
+        {/* Right Content Section */}
+        <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
+          <div className="transform transition-all duration-500 ease-out translate-x-0">
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
               <span className="font-semibold text-purple-800">
                 Easy to use, with robust security to protect your data
               </span>{' '}
               and make tax filing stress-free. Our platform ensures that your sensitive financial information is encrypted and stored securely, offering peace of mind while you navigate the tax filing process. With a user-friendly interface designed for both beginners and seasoned users, you can easily input your details, track your progress, and complete your filing with just a few clicks or even by voice.
             </p>
-          </motion.p>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

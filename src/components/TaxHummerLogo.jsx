@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom"; 
+
 
 const TaxHummerLogo = () => {
   return (
-    <div className="flex items-center space-x-2">
-      <div className="flex-shrink-0 cursor-pointer">
+    <Link to="/" className="flex items-center space-x-2 cursor-pointer">
+      <div className="flex-shrink-0">
         <img
           src="logoTaxHummer.png"
           alt="TaxHummer"
           className="hover:opacity-80 transition-opacity w-10 h-8"
         />
       </div>
-      <h1 
+      <h1
         className="
           text-xl 
           font-['Orbitron'] 
@@ -20,7 +22,6 @@ const TaxHummerLogo = () => {
           hover:tracking-wider 
           transition-all 
           duration-300 
-          cursor-pointer 
           select-none 
           leading-8 
           font-semibold
@@ -29,7 +30,7 @@ const TaxHummerLogo = () => {
       >
         Tax Hummer
       </h1>
-    </div>
+    </Link>
   );
 };
 

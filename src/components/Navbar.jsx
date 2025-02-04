@@ -33,7 +33,7 @@ const NavBar = () => {
       { icon: <Headphones className="w-5 h-5" />, label: 'Support', href: '#' },
     ],
     company: [
-      { icon: <Building2 className="w-5 h-5" />, label: 'About Us', href: '#' },
+      { icon: <Building2 className="w-5 h-5" />, label: 'About Us', href: '/about' },
       { icon: <Users className="w-5 h-5" />, label: 'Careers', href: '#' },
       { icon: <MessageSquare className="w-5 h-5" />, label: 'Contact', href: '#' },
     ]
@@ -82,7 +82,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer">
-           <TaxHummerLogo/>
+           <TaxHummerLogo />
             
           </div>
 

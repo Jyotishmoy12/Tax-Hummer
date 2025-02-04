@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import WhyChooseUsAI from '../components/WhyChooseUsAI';
 import WhyChooseUsAIEnd from '../components/WhyChooseUsEnd';
 import WhyChooseUsUser from '../components/WhyChooseUsUser';
+import MissionVision from '../components/MissionVision';
+import FounderSection from '../components/FounderSection';
 
 // Floating Color Points Component (using Tailwind)
 const FloatingPoints = () => {
@@ -88,8 +90,10 @@ const AboutUsSection = () => {
         <WhyChooseUsUser />
 
         {/* Footer */}
-        
+        <MissionVision/>
+        <FounderSection/>
       </div>
+
       <Footer />
     </>
   );
