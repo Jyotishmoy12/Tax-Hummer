@@ -11,9 +11,9 @@ const ReadyToGetStarted = () => {
             <h2 className="text-3xl font-semibold font-[roboto]">
               Ready to Get Started?
             </h2>
-            <button className="bg-purple-600 text-white py-2 px-6 mx-20 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300 font-[roboto]">
-              Try for Free
-            </button>
+            <button className="bg-purple-600 text-white py-2 px-6 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300 font-[roboto] w-full sm:w-auto">
+           Try for Free
+          </button>
           </div>
 
           {/* Image Section without border */}
