@@ -41,11 +41,13 @@ const WhyChooseUs = () => {
       <div className="flex flex-col sm:flex-row items-center justify-between max-w-full space-y-8 sm:space-y-0">
         {/* Left Content */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
-            <span className="font-semibold text-purple-800">
-              Easy to use, with robust security to protect your data
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-[roboto] font-semibold">
+            <span className="font-semibold text-purple-800 font-[roboto]">
+            Voice-Based ITR Filing – 
             </span>{' '}
-            and make tax filing stress-free. Our platform ensures that your sensitive financial information is encrypted and stored securely, offering peace of mind while you navigate the tax filing process. With a user-friendly interface designed for both beginners and seasoned users, you can easily input your details, track your progress, and complete your filing with just a few clicks or even by voice.
+            Taxes at the Speed of Speech
+            Filing Income Tax Returns has never been simpler. With Tax Hummer’s voice-enabled ITR filing, users can effortlessly file their taxes by speaking their details.
+            Our advanced AI processes the information, eliminating the need for manual data entry. No forms, no complexities—just seamless tax filing at your convenience.
           </p>
         </div>
 

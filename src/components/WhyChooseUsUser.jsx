@@ -35,11 +35,12 @@ const WhyChooseUsUser = () => {
         {/* Right Content Section */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
           <div className="transform transition-all duration-500 ease-out translate-x-0">
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold font-[roboto] mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
               <span className="font-semibold text-purple-800">
-                Easy to use, with robust security to protect your data
+              User-Friendly & Secure – 
               </span>{' '}
-              and make tax filing stress-free. Our platform ensures that your sensitive financial information is encrypted and stored securely, offering peace of mind while you navigate the tax filing process. With a user-friendly interface designed for both beginners and seasoned users, you can easily input your details, track your progress, and complete your filing with just a few clicks or even by voice.
+              A Platform You Can Trust
+              Security and ease of use are at the core of Tax Hummer. Built with state-of-the-art encryption technology, the platform ensures that user data remains confidential and protected. The intuitive interface is designed for effortless navigation, making tax filing and financial management accessible to everyone, from individuals to enterprises.
             </p>
           </div>
         </div>

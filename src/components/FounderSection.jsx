@@ -14,7 +14,7 @@ const FounderSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <img
-            src="founder-image.jpg" // Replace with actual image URL
+            src="founderimage.jpeg" // Replace with actual image URL
             alt="Bikash Pandey"
             className="w-full h-full object-cover"
           />
@@ -27,27 +27,27 @@ const FounderSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-purple-900 mb-4">Meet Our Founder</h2>
-          <p className="text-lg text-gray-800 leading-relaxed">
-            <span className="font-semibold text-purple-700">Tax Hummer</span> was founded by Bikash Pandey, a taxation expert with over 7 years of experience in the field. 
+          <h2 className="text-3xl sm:text-4xl font-bold text-purple-900 mb-4 font-[roboto]">Meet Our Founder</h2>
+          <p className="text-lg text-gray-800 leading-relaxed font-[roboto]">
+            <span className="font-semibold text-purple-700 font-[roboto]">Tax Hummer</span> was founded by Bikash Pandey, a taxation expert with over 7 years of experience in the field. 
             His deep understanding of the complexities of tax filing inspired him to build a cutting-edge AI-driven platform that simplifies the process using voice technology. 
             Passionate about innovation and accessibility, Bikash’s vision is to make tax filing faster, easier, and stress-free for everyone.  
             His mission is to lead India into a smarter, tech-driven future for tax compliance, placing Tax Hummer at the forefront of the digital tax revolution.
           </p>
 
           {/* Contact Details */}
-          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 text-gray-700 text-lg">
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 text-gray-700 text-lg font-[roboto]">
             <a
-              href="mailto:founder@taxhummer.com"
+              href="mailto:Ceo@taxhummer.in"
               className="flex items-center gap-2 hover:text-purple-800 transition"
             >
-              <FaEnvelope className="text-purple-600" /> founder@taxhummer.com
+              <FaEnvelope className="text-purple-600" /> Ceo@taxhummer.in
             </a>
             <a
               href="tel:+91-9876543210"
               className="flex items-center gap-2 hover:text-purple-800 transition"
             >
-              <FaPhone className="text-purple-600" /> +91-9876543210
+              <FaPhone className="text-purple-600" /> +91-9101306796
             </a>
             <a
               href="https://linkedin.com/in/bikash-pandey"

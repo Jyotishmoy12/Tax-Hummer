@@ -39,11 +39,13 @@ const Footer = () => {
             select-none
             tracking-wide
             drop-shadow-lg
+            italic
+            font-[playfair-display]
             ">
             Tax Hummer
             </h2>
           </div>
-          <p className="text-purple/80 px-7">
+          <p className="text-purple/80 px-7 font-[roboto]">
             Simplifying tax management and financial guidance for individuals and businesses.
           </p>
           {/* Illustration Space */}
@@ -52,44 +54,44 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7">
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-[roboto]">
             Quick Links
           </h3>
       
           <nav className="space-y-2 px-7">
-            <Link to="/" className="block hover:text-lavender-200 transition-colors">Home</Link>
-            <Link to="/services" className="block hover:text-lavender-200 transition-colors">Services</Link>
-            <Link to="/resources" className="block hover:text-lavender-200 transition-colors">Resources</Link>
-            <Link to="/about" className="block hover:text-lavender-200 transition-colors">About</Link>
-            <Link to="/contact" className="block hover:text-lavender-200 transition-colors">Contact</Link>
+            <Link to="/" className="block hover:text-lavender-200 transition-colors font-[roboto]">Home</Link>
+            <Link to="/services" className="block hover:text-lavender-200 transition-colors font-[roboto]">Services</Link>
+            <Link to="/resources" className="block hover:text-lavender-200 transition-colors font-[roboto]">Resources</Link>
+            <Link to="/about" className="block hover:text-lavender-200 transition-colors font-[roboto]">About</Link>
+            <Link to="/contact" className="block hover:text-lavender-200 transition-colors font-[roboto]">Contact</Link>
           </nav>
       
         </div>
 
         {/* Contact Information */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7">
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-[roboto]">
             Contact Us
           </h3>
           <div className="space-y-3 px-7">
             <div className="flex items-center space-x-3">
               <MapPin className="text-lavender-300" />
-              <span>123 Tax Street, Financial District</span>
+              <span className="font-[roboto]">123 Tax Street, Financial District</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="text-lavender-300" />
-              <span>+91 (555) TAX-HELP</span>
+              <span className="font-[roboto]">+91 (555) TAX-HELP</span>
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="text-lavender-300" />
-              <span>support@taxhummer.com</span>
+              <span className="font-[roboto]">support@taxhummer.com</span>
             </div>
           </div>
         </div>
 
         {/* Social Media */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7">
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-[roboto]">
             Connect With Us
           </h3>
           <div className="flex space-x-4">
@@ -101,9 +103,9 @@ const Footer = () => {
 
       {/* Copyright & Legal */}
       <div className="bg-purple-800 text-center py-4">
-        <p className="text-sm text-white/80">
+        <p className="text-sm text-white/80 font-[roboto]">
           © 2025 Tax Hummer. All Rights Reserved | 
-          <a href="#" className="ml-2 hover:text-lavender-200">
+          <a href="#" className="ml-2 hover:text-lavender-200 ">
             Privacy Policy
           </a> | 
           <a href="#" className="ml-2 hover:text-lavender-200">

@@ -15,11 +15,12 @@ const WhyChooseUsAIEnd = () => {
         {/* Left Content */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
           <div className="transform transition-all duration-500 ease-out translate-x-0 opacity-100">
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-[roboto]">
               <span className="font-semibold text-purple-800">
-                Easy to use, with robust security to protect your data
+              End-to-End Financial Ecosystem – 
               </span>{' '}
-              and make tax filing stress-free. Our platform ensures that your sensitive financial information is encrypted and stored securely, offering peace of mind while you navigate the tax filing process. With a user-friendly interface designed for both beginners and seasoned users, you can easily input your details, track your progress, and complete your filing with just a few clicks or even by voice.
+              One Platform, Complete Solutions
+              Tax Hummer is more than a tax filing service—it’s a comprehensive financial ecosystem designed to simplify financial operations for individuals and businesses. From tax filing and compliance to banking, inventory management, and financial planning, our platform integrates everything in one place, ensuring convenience and efficiency.
             </p>
           </div>
         </div>

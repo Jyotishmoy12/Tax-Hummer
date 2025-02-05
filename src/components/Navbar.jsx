@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Menu, 
   X, 
@@ -23,19 +24,19 @@ const NavBar = () => {
 
   const menuItems = {
     products: [
-      { icon: <Laptop className="w-5 h-5" />, label: 'Platform', href: '#' },
-      { icon: <ShieldCheck className="w-5 h-5" />, label: 'Security', href: '#' },
-      { icon: <BarChart className="w-5 h-5" />, label: 'Analytics', href: '#' },
+      { icon: <Laptop className="w-5 h-5" />, label: 'Platform', to: '/platform' },
+      { icon: <ShieldCheck className="w-5 h-5" />, label: 'Security', to: '/security' },
+      { icon: <BarChart className="w-5 h-5" />, label: 'Analytics', to: '/analytics' },
     ],
     resources: [
-      { icon: <BookOpen className="w-5 h-5" />, label: 'Documentation', href: '#' },
-      { icon: <Users className="w-5 h-5" />, label: 'Community', href: '#' },
-      { icon: <Headphones className="w-5 h-5" />, label: 'Support', href: '#' },
+      { icon: <BookOpen className="w-5 h-5" />, label: 'Documentation', to: '/docs' },
+      { icon: <Users className="w-5 h-5" />, label: 'Community', to: '/community' },
+      { icon: <Headphones className="w-5 h-5" />, label: 'Support', to: '/support' },
     ],
     company: [
-      { icon: <Building2 className="w-5 h-5" />, label: 'About Us', href: '/about' },
-      { icon: <Users className="w-5 h-5" />, label: 'Careers', href: '#' },
-      { icon: <MessageSquare className="w-5 h-5" />, label: 'Contact', href: '#' },
+      { icon: <Building2 className="w-5 h-5" />, label: 'About Us', to: '/about' },
+      { icon: <Users className="w-5 h-5" />, label: 'Careers', to: '/careers' },
+      { icon: <MessageSquare className="w-5 h-5" />, label: 'Contact', to: '/contact' },
     ]
   };
 
@@ -62,14 +63,14 @@ const NavBar = () => {
       <div className="absolute left-0 pt-2 w-56 hidden group-hover:block">
         <div className="bg-white rounded-xl shadow-lg ring-1 ring-black/5 p-2">
           {dropdownItems.map((item, index) => (
-            <a
+            <Link
               key={index}
-              href={item.href}
+              to={item.to}
               className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 cursor-pointer transition-colors duration-200"
             >
               {item.icon}
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -77,13 +78,12 @@ const NavBar = () => {
   );
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-3' : 'bg-white/40 backdrop-blur-sm py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50  font-[roboto] transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-3' : 'bg-white/40 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer">
            <TaxHummerLogo />
-            
           </div>
 
           {/* Desktop Navigation */}
@@ -94,17 +94,19 @@ const NavBar = () => {
             <NavLink icon={<BookOpen className="w-4 h-4 text-black" />} dropdownItems={menuItems.resources}>
               Resources
             </NavLink>
-            <NavLink icon={<Building2 className="w-4 h-4 text-black" />} dropdownItems={menuItems.company}>
+            <NavLink icon={<Building2 className="w-4 h-4 text-black " />} dropdownItems={menuItems.company}>
               Company
             </NavLink>
           </div>
 
           {/* Desktop Get Started Button */}
           <div className="hidden md:block">
-            <button className="bg-purple-500 text-neutral font-medium px-6 py-2.5 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-offset-2 hover:bg-purple-500 relative overflow-hidden">
-              <span className="relative z-10 text-white">Get Started</span>
-              <div className="absolute inset-0 bg-purple-400 rounded-full opacity-30 animate-pulse"></div>
-            </button>
+            <Link 
+              to="/get-started"
+              className="bg-purple-500 text-neutral font-medium px-6 py-2.5 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-offset-2 hover:bg-purple-500 relative overflow-hidden font-[roboto] text-white"
+            >
+              Get Started
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -148,14 +150,14 @@ const NavBar = () => {
                   {activeSection === section && (
                     <div className="pl-4 pb-3">
                       {items.map((item, index) => (
-                        <a
+                        <Link
                           key={index}
-                          href={item.href}
+                          to={item.to}
                           className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:text-indigo-600"
                         >
                           {item.icon}
                           <span>{item.label}</span>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -164,9 +166,12 @@ const NavBar = () => {
 
               {/* Mobile Get Started Button */}
               <div className="mt-4">
-                <button className="bg-purple-500 hover:bg-[#b997f5] text-white font-medium px-4 py-2 rounded-lg cursor-pointer transition-all duration-200 w-full">
+                <Link 
+                  to="/get-started"
+                  className="bg-purple-500 hover:bg-[#b997f5] text-white font-medium px-4 py-2 rounded-lg cursor-pointer transition-all duration-200 w-full block text-center"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
           </div>

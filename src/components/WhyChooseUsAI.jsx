@@ -73,11 +73,12 @@ const WhyChooseUsAI = () => {
         {/* Right Content Section */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
           <div className="transform transition-all duration-500 ease-out translate-x-0">
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-[roboto]">
               <span className="font-semibold text-purple-800">
-                Easy to use, with robust security to protect your data
+              AI-Powered Tax Compliance – 
               </span>{' '}
-              and make tax filing stress-free. Our platform ensures that your sensitive financial information is encrypted and stored securely, offering peace of mind while you navigate the tax filing process. With a user-friendly interface designed for both beginners and seasoned users, you can easily input your details, track your progress, and complete your filing with just a few clicks or even by voice.
+              Smart, Accurate, and Hassle-Free
+              Keeping up with tax regulations can be overwhelming, but our AI-driven tax compliance system ensures that users stay ahead. From real-time tracking of tax laws to automated calculations and filing, Tax Hummer minimizes human errors and maximizes compliance efficiency. Whether it’s ITR, GST, or business taxation, our intelligent system guarantees precision and peace of mind.
             </p>
           </div>
         </div>

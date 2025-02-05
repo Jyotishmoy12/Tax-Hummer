@@ -64,12 +64,12 @@ const HeroSection = () => {
         
         <h1 className="space-y-3">
           <motion.span 
-            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mt-20 lg:mt-5 text-black leading-tight"
+            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mt-20 lg:mt-5 text-black leading-tight font-[roboto]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             Making Tax Filing 
-            <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 relative">
+            <span className="italic font-roboto text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 relative">
               Easy
               <motion.div 
                 className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"
@@ -80,12 +80,12 @@ const HeroSection = () => {
             </span>
           </motion.span>
           <motion.span 
-            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-black leading-tight"
+            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-black leading-tight font-[roboto]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             Come
-            <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+            <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-roboto">
               Join
             </span>
             Us

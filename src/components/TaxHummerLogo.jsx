@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const TaxHummerLogo = () => {
   return (
-    <Link to="/" className="flex items-center space-x-2 cursor-pointer">
+    <Link to="/" className="flex items-center space-x-2 cursor-pointer ">
       <div className="flex-shrink-0">
         <img
           src="logoTaxHummer.png"
@@ -15,7 +15,6 @@ const TaxHummerLogo = () => {
       <h1
         className="
           text-xl 
-          font-['Orbitron'] 
           italic 
           text-lavender-600 
           tracking-wide 
@@ -26,6 +25,7 @@ const TaxHummerLogo = () => {
           leading-8 
           font-semibold
           text-purple-700
+          font-[playfair-display]
         "
       >
         Tax Hummer

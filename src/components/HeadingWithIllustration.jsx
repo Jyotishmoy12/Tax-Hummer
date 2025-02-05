@@ -49,7 +49,7 @@ const HeadingWithIllustration = () => {
         <div className="w-full sm:w-1/2 max-w-2xl text-center sm:text-left">
           {/* Animated Heading with Word-by-Word Hover */}
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-800 mb-6 leading-tight font-serif text-center"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-800 mb-6 leading-tight font-[roboto] text-center"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5, type: 'spring', stiffness: 100 }}
@@ -59,7 +59,7 @@ const HeadingWithIllustration = () => {
 
           {/* Animated Subheading */}
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-700 font-medium mb-4 md:mb-8 font-sans"
+            className="text-base sm:text-lg md:text-xl text-gray-700 font-semibold mb-4 md:mb-8 font-[roboto]"
             initial={{ opacity: 0, x: -30 }}
             animate={{
               opacity: 1,

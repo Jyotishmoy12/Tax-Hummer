@@ -85,12 +85,12 @@ const TaxApp = () => {
               >
                 <Sparkles className="w-4 h-4 text-purple-400 opacity-50" />
               </motion.div>
-              <h2 className="text-lg font-bold">Simplify Your Taxes</h2>
-              <p className="text-sm text-gray-600 mb-2">File in Minutes with Ease!</p>
+              <h2 className="text-lg font-bold font-[roboto]">Simplify Your Taxes</h2>
+              <p className="text-sm text-gray-600 mb-2 font-[roboto]">File in Minutes with Ease!</p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-purple-500 text-white px-4 py-1.5 rounded-lg text-sm"
+                className="bg-purple-500 text-white px-4 py-1.5 rounded-lg text-sm font-[roboto]"
               >
                 Start Filing
               </motion.button>
@@ -107,12 +107,12 @@ const TaxApp = () => {
               >
                 <Wallet className="w-4 h-4 text-purple-600 opacity-50" />
               </motion.div>
-              <h2 className="text-lg font-bold">Hire Financial Advisor</h2>
-              <p className="text-sm text-gray-600 mb-2">Start investing in mutual funds for saving tax</p>
+              <h2 className="text-lg font-bold font-[roboto]">Hire Financial Advisor</h2>
+              <p className="text-sm text-gray-600 mb-2 font-[roboto]">Start investing in mutual funds for saving tax</p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-4 py-1.5 rounded-lg text-sm"
+                className="bg-white text-blue-600 px-4 py-1.5 rounded-lg text-sm font-[roboto]"
               >
                 Book Advisor
               </motion.button>
@@ -124,16 +124,16 @@ const TaxApp = () => {
                 className="bg-purple-200 p-4 rounded-xl"
               >
                 <TrendingUp className="w-4 h-4 text-purple-600 mb-2" />
-                <h3 className="text-base font-bold">Top mutual funds</h3>
-                <p className="text-xs text-gray-600">Axis bank small cap funds</p>
+                <h3 className="text-base font-bold font-[roboto]">Top mutual funds</h3>
+                <p className="text-xs text-gray-600 font-[roboto]">Axis bank small cap funds</p>
               </motion.div>
               <motion.div 
                 whileHover={{ scale: 1.05 }}
                 className="bg-purple-100 p-4 rounded-xl"
               >
                 <BookOpen className="w-4 h-4 text-purple-600 mb-2" />
-                <h3 className="text-base font-bold">Blogs</h3>
-                <p className="text-xs text-gray-600">Continue Reading...</p>
+                <h3 className="text-base font-bold font-[roboto]">Blogs</h3>
+                <p className="text-xs text-gray-600 font-[roboto]">Continue Reading...</p>
               </motion.div>
             </div>
 
@@ -141,20 +141,20 @@ const TaxApp = () => {
               whileHover={{ scale: 1.02 }}
               className="bg-purple-100 p-4 rounded-xl"
             >
-              <h3 className="text-base font-bold">Your Tax Summary</h3>
-              <p className="text-xs text-gray-600">See Now</p>
+              <h3 className="text-base font-bold font-[roboto]">Your Tax Summary</h3>
+              <p className="text-xs text-gray-600 font-[roboto]">See Now</p>
             </motion.div>
 
             <motion.div 
               whileHover={{ scale: 1.02 }}
               className="bg-purple-200 p-4 rounded-xl"
             >
-              <h2 className="text-lg font-bold">Investment To Save</h2>
-              <p className="text-sm text-gray-600 mb-2">Start investing in mutual funds for saving tax</p>
+              <h2 className="text-lg font-bold font-[roboto]">Investment To Save</h2>
+              <p className="text-sm text-gray-600 mb-2 font-[roboto]">Start investing in mutual funds for saving tax</p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-4 py-1.5 rounded-lg text-sm"
+                className="bg-white text-blue-600 px-4 py-1.5 rounded-lg text-sm font-[roboto]"
               >
                 Start Investing
               </motion.button>
@@ -175,14 +175,14 @@ const TaxApp = () => {
               className="flex flex-col items-center text-purple-600"
             >
               <Home className="w-5 h-5" />
-              <span className="text-xs">Home</span>
+              <span className="text-xs font-[roboto]">Home</span>
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.1 }}
               className="flex flex-col items-center text-purple-400"
             >
               <FileText className="w-5 h-5" />
-              <span className="text-xs">Tax</span>
+              <span className="text-xs font-[roboto]">Tax</span>
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.1 }}
@@ -201,14 +201,14 @@ const TaxApp = () => {
               className="flex flex-col items-center text-purple-400"
             >
               <ClipboardList className="w-5 h-5" />
-              <span className="text-xs">Orders</span>
+              <span className="text-xs font-[roboto]">Orders</span>
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.1 }}
               className="flex flex-col items-center text-purple-400"
             >
               <User className="w-5 h-5" />
-              <span className="text-xs">Profile</span>
+              <span className="text-xs font-[roboto]">Profile</span>
             </motion.div>
           </div>
         </motion.div>
