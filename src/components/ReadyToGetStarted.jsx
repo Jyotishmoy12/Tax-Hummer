@@ -19,7 +19,7 @@ const ReadyToGetStarted = () => {
           {/* Image Section without border */}
           <div className="relative w-full max-w-sm lg:max-w-md flex justify-center">
             <img
-              src="illu1.jpg" // Your illustration
+              src="illu1.webp" 
               alt="Illustration"
               className="w-full h-auto rounded-lg" // Center the image
             />

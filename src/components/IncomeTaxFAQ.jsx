@@ -101,7 +101,7 @@ const TaxFAQ = () => {
         <h1 className="flex flex-col sm:flex-row items-center justify-center gap-4 text-2xl sm:text-3xl font-bold text-gray-800">
           {/* Image on Top (small screens) & Side (large screens) */}
           <img
-            src="faq.jpg"
+            src="faq.webp"
             alt="FAQ"
             className="w-20 h-20 sm:w-24 sm:h-24 rounded-md "
           />

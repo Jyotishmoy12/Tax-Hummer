@@ -34,3 +34,9 @@
   width: 40px;
   height: 40px;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: url('path-to-font.woff2') format('woff2');
+}

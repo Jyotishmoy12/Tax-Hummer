@@ -7,7 +7,7 @@ const TaxHummerLogo = () => {
     <Link to="/" className="flex items-center space-x-2 cursor-pointer ">
       <div className="flex-shrink-0">
         <img
-          src="logoTaxHummer.png"
+          src="logoTaxHummer.webp"
           alt="TaxHummer"
           className="hover:opacity-80 transition-opacity w-10 h-8"
         />
