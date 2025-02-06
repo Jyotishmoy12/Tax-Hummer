@@ -58,7 +58,7 @@ const WhyChooseUsAI = () => {
             )}
 
             <img
-              src="AI.jpg"
+              src="AI.webp"
               alt="AI Tax Assistant"
               className="w-full max-w-md mx-auto object-contain lg:-my-10 lg:-mx-10"
               width={400}

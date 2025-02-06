@@ -44,7 +44,7 @@ const WhyChooseUsAIEnd = () => {
             )}
 
             <img
-              src="endtoend.jpg"
+              src="endtoend.webp"
               alt="End-to-end Tax Solution"
               className="w-full max-w-md mx-auto object-contain lg:-my-10 lg:mx-10"
               width={400}

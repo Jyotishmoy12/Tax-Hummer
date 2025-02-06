@@ -14,7 +14,7 @@ const FounderSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <img
-            src="founderimage.jpeg" // Replace with actual image URL
+            src="founderimage.webp" // Replace with actual image URL
             alt="Bikash Pandey"
             className="w-full h-full object-cover"
           />

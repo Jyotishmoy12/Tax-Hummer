@@ -12,7 +12,7 @@ const MissionVision = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <img src="mission.jpg" alt="Mission & Vision" className="lg:w-50 h-70 sm:w-24 sm:h-24 object-contain" />
+          <img src="mission.webp" alt="Mission & Vision" className="lg:w-50 h-70 sm:w-24 sm:h-24 object-contain" />
         </motion.div>
 
         {/* Content */}

@@ -18,7 +18,7 @@ const WhyChooseUsUser = () => {
             }`}
           >
             <img
-              src="user.jpg"
+              src="user.webp"
               alt="User-friendly Tax Interface"
               className="w-full max-w-md mx-auto object-contain lg:-my-10 lg:-mx-10"
               width={400}
