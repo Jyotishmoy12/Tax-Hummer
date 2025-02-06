@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-sans font-semibold">
             <span className="font-semibold text-purple-800 font-sans">
-            Voice-Based ITR Filing – 
+              Voice-Based ITR Filing – 
             </span>{' '}
             Taxes at the Speed of Speech
             Filing Income Tax Returns has never been simpler. With Tax Hummer’s voice-enabled ITR filing, users can effortlessly file their taxes by speaking their details.
@@ -70,12 +70,14 @@ const WhyChooseUs = () => {
             )}
 
             <img
-              src="voice.jpg"
+              srcSet="voice.webp 400w, voice.webp 800w, voice.webp 1200w"
+              sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+              src="voice-800w.webp"  // Fallback image if `srcSet` fails
               alt="Tax Illustration"
               className="w-full max-w-md mx-auto object-contain lg:-my-10 lg:mx-10"
               width={400}
               height={320}
-              loading="lazy"
+              loading="lazy" // Enable lazy loading for the image
               decoding="async"
               onLoad={handleImageLoad} // Call this function when image is loaded
             />
