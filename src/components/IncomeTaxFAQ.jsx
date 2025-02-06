@@ -20,19 +20,19 @@ const TaxFAQ = () => {
   const sections = {
     income: {
       title: "Income Tax",
-      icon: <Landmark className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 font-[roboto]" />,
+      icon: <Landmark className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 font-sans" />,
       questions: [
         {
           id: 'what-is-tax',
           question: "What is Income Tax?",
           answer: "Income tax is a direct tax imposed by the government on an individual's or entity's earnings. It is paid annually based on earnings in a financial year (April 1 – March 31).",
-          icon: <Info className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 font-[roboto]" />
+          icon: <Info className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 font-sans" />
         },
         {
           id: 'who-pays',
           question: "Who needs to file Income Tax Return (ITR)?",
           answer: "You must file an ITR if:\n• Your annual income exceeds ₹2.5 lakh (for individuals below 60 years)\n• Your income exceeds ₹3 lakh (for senior citizens above 60 years)\n• Your income exceeds ₹5 lakh (for super senior citizens above 80 years)\n• You have foreign income or assets\n• You want to claim a tax refund\n• Your business turnover exceeds specified limits",
-          icon: <Wallet className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 font-[roboto]" />
+          icon: <Wallet className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 font-sans" />
         },
         {
           id: 'due-dates',
@@ -44,7 +44,7 @@ const TaxFAQ = () => {
           id: 'penalties',
           question: "What are the penalties for late filing?",
           answer: "• ₹1,000 for income below ₹5 lakh\n• ₹5,000 for income above ₹5 lakh (before December 31st)\n• ₹10,000 for late filing beyond December 31st",
-          icon: <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 font-[roboto]" />
+          icon: <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 font-sans" />
         }
       ]
     },
@@ -56,13 +56,13 @@ const TaxFAQ = () => {
           id: 'how-to-save',
           question: "How can I reduce my tax liability?",
           answer: "You can save taxes using these deductions:\n\n🔹 Section 80C (Up to ₹1.5 lakh deduction)\n• PPF, EPF, ELSS mutual funds\n• Tax-saving FDs, NSC, LIC premium\n• Home loan principal repayment\n\n🔹 Section 80D (Health Insurance)\n• ₹25,000 deduction for self/spouse/children\n• ₹50,000 deduction for senior citizen parents\n\n🔹 Section 80E (Education Loan Interest)\n• Interest paid on education loans is fully deductible\n\n🔹 Section 24(b) (Home Loan Interest)\n• Up to ₹2 lakh deduction on home loan interest\n\n🔹 HRA (House Rent Allowance)\n• Salaried individuals in rented houses can claim\n\n🔹 NPS – Section 80CCD(1B)\n• Additional ₹50,000 deduction",
-          icon: <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 font-[roboto]" />
+          icon: <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 font-sans" />
         },
         {
           id: 'tax-regime',
           question: "Old vs New Tax Regime - Which is better?",
           answer: "Choose based on your situation:\n\n✅ Old Tax Regime:\n• Allows deductions (80C, 80D, HRA, etc.)\n• Better if you have high deductions\n\n✅ New Tax Regime:\n• Lower tax rates\n• No deductions allowed\n• Better if you don't claim many deductions",
-          icon: <BrainCircuit className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 font-[roboto]" />
+          icon: <BrainCircuit className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 font-sans" />
         }
       ]
     },
@@ -99,17 +99,17 @@ const TaxFAQ = () => {
       
       <div className="text-center py-6 px-4 border-b border-gray-100">
         <h1 className="flex items-center justify-center gap-2 text-2xl sm:text-3xl font-bold text-gray-800">
-          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 font-[roboto]" />
+          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 font-sans" />
           Tax FAQ
         </h1>
-        <p className="text-sm sm:text-base text-gray-600 mt-2 font-[roboto]">
+        <p className="text-sm sm:text-base text-gray-600 mt-2 font-sans">
           Everything you need to know about taxes in India
         </p>
       </div>
 
       <div className="p-2 sm:p-6 ">
         {/* Section Tabs - Horizontal scroll on mobile */}
-        <div className="flex overflow-x-auto pb-2 mb-4 sm:mb-6 sm:flex-wrap sm:justify-center no-scrollbar justify-evenly lg:gap-4 font-[roboto]">
+        <div className="flex overflow-x-auto pb-2 mb-4 sm:mb-6 sm:flex-wrap sm:justify-center no-scrollbar justify-evenly lg:gap-4 font-sans">
           {Object.entries(sections).map(([key, section]) => (
             <button
               key={key}
@@ -129,7 +129,7 @@ const TaxFAQ = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-2 sm:space-y-5 font-[roboto]">
+        <div className="space-y-2 sm:space-y-5 font-sans">
           {sections[activeSection].questions.map((item) => (
             <div
               key={`${activeSection}-${item.id}`} 

@@ -15,7 +15,7 @@ const WhyChooseUsAIEnd = () => {
         {/* Left Content */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
           <div className="transform transition-all duration-500 ease-out translate-x-0 opacity-100">
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-[roboto]">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-sans">
               <span className="font-semibold text-purple-800">
               End-to-End Financial Ecosystem – 
               </span>{' '}

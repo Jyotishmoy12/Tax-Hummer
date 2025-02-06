@@ -64,7 +64,7 @@ const HeroSection = () => {
         
         <h1 className="space-y-3">
           <motion.span 
-            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mt-20 lg:mt-5 text-black leading-tight font-[roboto]"
+            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mt-20 lg:mt-5 text-black leading-tight font-sans"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
@@ -80,7 +80,7 @@ const HeroSection = () => {
             </span>
           </motion.span>
           <motion.span 
-            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-black leading-tight font-[roboto]"
+            className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-black leading-tight font-sans"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >

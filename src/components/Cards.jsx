@@ -9,7 +9,7 @@ const Card = ({ title, icon, description }) => {
       </div>
       <h3 className="text-2xl font-semibold text-black mb-4">{title}</h3>
       <p className="text-gray-600 mb-6 text-center">{description}</p>
-      <button className="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-indigo-700 transition duration-300 font-[roboto]">
+      <button className="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-indigo-700 transition duration-300 font-sans">
         Learn More
       </button>
     </div>
@@ -18,7 +18,7 @@ const Card = ({ title, icon, description }) => {
 
 const Cards = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-6 mt-10 px-4 font-[roboto]">
+    <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-6 mt-10 px-4 font-sans">
       <Card 
         title="ITR Filing" 
         icon={<FaFileInvoice />} 

@@ -27,16 +27,16 @@ const FounderSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-purple-900 mb-4 font-[roboto]">Meet Our Founder</h2>
-          <p className="text-lg text-gray-800 leading-relaxed font-[roboto]">
-            <span className="font-semibold text-purple-700 font-[roboto]">Tax Hummer</span> was founded by Bikash Pandey, a taxation expert with over 7 years of experience in the field. 
+          <h2 className="text-3xl sm:text-4xl font-bold text-purple-900 mb-4 font-sans">Meet Our Founder</h2>
+          <p className="text-lg text-gray-800 leading-relaxed font-sans">
+            <span className="font-semibold text-purple-700 font-sans">Tax Hummer</span> was founded by Bikash Pandey, a taxation expert with over 7 years of experience in the field. 
             His deep understanding of the complexities of tax filing inspired him to build a cutting-edge AI-driven platform that simplifies the process using voice technology. 
             Passionate about innovation and accessibility, Bikash’s vision is to make tax filing faster, easier, and stress-free for everyone.  
             His mission is to lead India into a smarter, tech-driven future for tax compliance, placing Tax Hummer at the forefront of the digital tax revolution.
           </p>
 
           {/* Contact Details */}
-          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 text-gray-700 text-lg font-[roboto]">
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 text-gray-700 text-lg font-sans">
             <a
               href="mailto:Ceo@taxhummer.in"
               className="flex items-center gap-2 hover:text-purple-800 transition"

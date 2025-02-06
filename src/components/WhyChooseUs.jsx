@@ -41,8 +41,8 @@ const WhyChooseUs = () => {
       <div className="flex flex-col sm:flex-row items-center justify-between max-w-full space-y-8 sm:space-y-0">
         {/* Left Content */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-[roboto] font-semibold">
-            <span className="font-semibold text-purple-800 font-[roboto]">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed md:font-semibold md:max-w-3xl font-sans font-semibold">
+            <span className="font-semibold text-purple-800 font-sans">
             Voice-Based ITR Filing – 
             </span>{' '}
             Taxes at the Speed of Speech

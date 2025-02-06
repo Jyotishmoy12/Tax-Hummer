@@ -22,8 +22,8 @@ const MissionVision = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-xl font-semibold text-purple-800 mb-4 font-[roboto]">Our Mission & Vision</h2>
-          <p className="text-lg text-gray-700 leading-relaxed font-semibold font-[roboto]">
+          <h2 className="text-3xl sm:text-xl font-semibold text-purple-800 mb-4 font-sans">Our Mission & Vision</h2>
+          <p className="text-lg text-gray-700 leading-relaxed font-semibold font-sans">
             Our goal is to empower every taxpayer and business in India with hassle-free, accurate, and tech-driven financial solutions.  
             By making tax filing simple and accessible, we contribute to a smarter, digital India. We envision building a $1 billion fintech ecosystem, 
             integrating tax filing, GST compliance, and financial management into a unified platform. Our commitment is to make financial services more efficient, affordable, and accessible for everyone in India.

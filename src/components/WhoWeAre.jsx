@@ -7,7 +7,7 @@ const WhoWeAre = () => {
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl font-bold mb-6 text-yellow-300 font-[roboto]"
+          className="text-3xl sm:text-4xl font-bold mb-6 text-yellow-300 font-sans"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -17,12 +17,12 @@ const WhoWeAre = () => {
 
         {/* Content */}
         <motion.p
-          className="text-lg sm:text-xl leading-relaxed text-gray-200 font-[roboto]"
+          className="text-lg sm:text-xl leading-relaxed text-gray-200 font-sans"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
-          At <span className="font-semibold text-yellow-400 font-[roboto]">Tax Hummer</span>, we are on a mission to simplify finances, save time, 
+          At <span className="font-semibold text-yellow-400 font-sans">Tax Hummer</span>, we are on a mission to simplify finances, save time, 
           and help millions of Indian businesses and individuals manage their 
           financial lives more efficiently. As a technology-driven company, we 
           create trusted, insightful, and user-friendly platforms that empower 
@@ -30,7 +30,7 @@ const WhoWeAre = () => {
         </motion.p>
 
         <motion.p
-          className="text-lg sm:text-xl leading-relaxed text-gray-200 mt-4 font-[roboto]"
+          className="text-lg sm:text-xl leading-relaxed text-gray-200 mt-4 font-sans"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
@@ -43,7 +43,7 @@ const WhoWeAre = () => {
         </motion.p>
 
         <motion.p
-          className="text-lg sm:text-xl leading-relaxed text-gray-200 mt-4 font-[roboto]"
+          className="text-lg sm:text-xl leading-relaxed text-gray-200 mt-4 font-sans"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}

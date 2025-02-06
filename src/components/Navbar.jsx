@@ -8,14 +8,14 @@ import {
   BookOpen, 
   Building2, 
   Users, 
-  MessageSquare, 
-  BarChart, 
-  Laptop, 
-  ShieldCheck,
+  MessageSquare,  
+  Laptop,
   Headphones,
   ChevronRight
 } from 'lucide-react';
 import TaxHummerLogo from './TaxHummerLogo';
+import {FaFileInvoice} from "react-icons/fa";
+import { MdHomeRepairService } from "react-icons/md";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,8 +25,8 @@ const NavBar = () => {
   const menuItems = {
     products: [
       { icon: <Laptop className="w-5 h-5" />, label: 'Platform', to: '/platform' },
-      { icon: <ShieldCheck className="w-5 h-5" />, label: 'Security', to: '/security' },
-      { icon: <BarChart className="w-5 h-5" />, label: 'Analytics', to: '/analytics' },
+      { icon: <FaFileInvoice className="w-5 h-5" />, label: 'ITR Filing', to: '/itrfiling' },
+      { icon: <MdHomeRepairService className="w-5 h-5" />, label: 'Consulting Service', to: '/service' },
     ],
     resources: [
       { icon: <BookOpen className="w-5 h-5" />, label: 'Documentation', to: '/docs' },
@@ -78,7 +78,7 @@ const NavBar = () => {
   );
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50  font-[roboto] transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-3' : 'bg-white/40 backdrop-blur-sm py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50  font-sans transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-3' : 'bg-white/40 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -103,7 +103,7 @@ const NavBar = () => {
           <div className="hidden md:block">
             <Link 
               to="/get-started"
-              className="bg-purple-500 text-neutral font-medium px-6 py-2.5 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-offset-2 hover:bg-purple-500 relative overflow-hidden font-[roboto] text-white"
+              className="bg-purple-500 text-neutral font-medium px-6 py-2.5 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-offset-2 hover:bg-purple-500 relative overflow-hidden font-sans text-white"
             >
               Get Started
             </Link>

@@ -35,7 +35,7 @@ const WhyChooseUsUser = () => {
         {/* Right Content Section */}
         <div className="w-full sm:w-1/2 text-center sm:text-left -my-10 lg:-my-10">
           <div className="transform transition-all duration-500 ease-out translate-x-0">
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold font-[roboto] mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold font-sans mb-6 leading-relaxed md:font-semibold md:max-w-3xl">
               <span className="font-semibold text-purple-800">
               User-Friendly & Secure – 
               </span>{' '}

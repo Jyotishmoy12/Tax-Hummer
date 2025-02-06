@@ -8,10 +8,10 @@ const ReadyToGetStarted = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl space-y-6 lg:space-y-0 lg:space-x-8 overflow-hidden">
           {/* Text Section */}
           <div className="text-center lg:text-left text-black space-y-6">
-            <h2 className="text-3xl font-semibold font-[roboto]">
+            <h2 className="text-3xl font-semibold font-sans">
               Ready to Get Started?
             </h2>
-            <button className="bg-purple-600 text-white py-2 px-6 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300 font-[roboto] w-full sm:w-auto">
+            <button className="bg-purple-600 text-white py-2 px-6 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300 font-sans w-full sm:w-auto">
            Try for Free
           </button>
           </div>
