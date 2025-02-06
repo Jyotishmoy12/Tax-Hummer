@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mic, Cpu, Edit } from "lucide-react";
+import { Mic, BookCopy, Edit } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
@@ -9,9 +9,9 @@ import AnimatedBackground from "../components/AnimatedBackground";
 
 const ITRFiling = () => {
   const sections = [
-    { name: "AI Filing", icon: <Cpu className="w-8 h-8" />, path: "/ai" },
-    { name: "Manual Filing", icon: <Edit className="w-8 h-8" />, path: "/manual" },
-    { name: "Voice Filing", icon: <Mic className="w-8 h-8" />, path: "/voice" },
+    { name: "Form 16 Filing", icon: <BookCopy className="w-8 h-8" />, path: "/get-started" },
+    { name: "Manual Filing", icon: <Edit className="w-8 h-8" />, path: "/get-started" },
+    { name: "Voice Filing", icon: <Mic className="w-8 h-8" />, path: "/get-started" },
   ];
 
   return (

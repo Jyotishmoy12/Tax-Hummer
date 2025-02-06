@@ -50,12 +50,12 @@ const FounderSection = () => {
               <FaPhone className="text-purple-600" /> +91-9101306796
             </a>
             <a
-              href="https://linkedin.com/in/bikash-pandey"
+              href="https://www.linkedin.com/in/bikash-pandey-601b3519a/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-purple-800 transition"
             >
-              <FaLinkedin className="text-purple-600" /> LinkedIn Profile
+              <FaLinkedin className="text-purple-600" /> LinkedIn
             </a>
           </div>
         </motion.div>
