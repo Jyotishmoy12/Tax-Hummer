@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { 
+import {
   ChevronDown, Info, Calculator, FileText, BookOpen,
   Landmark, Receipt, Shield, Wallet, Building,
   PieChart, ScrollText, HeartHandshake, Sparkles,
@@ -90,18 +90,24 @@ const TaxFAQ = () => {
         }
       ]
     },
-   
+
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg py-10">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg my-10">
       {/* Header */}
-      
+
       <div className="text-center py-6 px-4 border-b border-gray-100">
-        <h1 className="flex items-center justify-center gap-2 text-2xl sm:text-3xl font-bold text-gray-800">
-          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 font-sans" />
+        <h1 className="flex flex-col sm:flex-row items-center justify-center gap-4 text-2xl sm:text-3xl font-bold text-gray-800">
+          {/* Image on Top (small screens) & Side (large screens) */}
+          <img
+            src="faq.jpg"
+            alt="FAQ"
+            className="w-20 h-20 sm:w-24 sm:h-24 rounded-md "
+          />
           Tax FAQ
         </h1>
+
         <p className="text-sm sm:text-base text-gray-600 mt-2 font-sans">
           Everything you need to know about taxes in India
         </p>
@@ -117,8 +123,8 @@ const TaxFAQ = () => {
               className={`
                 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium
                 whitespace-nowrap transition-all duration-300 transform hover:scale-105
-                ${activeSection === key 
-                  ? 'bg-purple-500 text-white shadow-lg' 
+                ${activeSection === key
+                  ? 'bg-purple-500 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-purple-100'}
               `}
             >
@@ -132,7 +138,7 @@ const TaxFAQ = () => {
         <div className="space-y-2 sm:space-y-5 font-sans">
           {sections[activeSection].questions.map((item) => (
             <div
-              key={`${activeSection}-${item.id}`} 
+              key={`${activeSection}-${item.id}`}
               className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md"
             >
               <button
@@ -149,7 +155,7 @@ const TaxFAQ = () => {
                   `}
                 />
               </button>
-              
+
               <div
                 className={`
                   overflow-hidden transition-all duration-300 ease-in-out

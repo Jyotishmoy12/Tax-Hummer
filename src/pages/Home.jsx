@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
+import AnimatedBackground from '../components/AnimatedBackground'; // Import the animated background
 
 // Lazy Loading Components
 const HeroSection = lazy(() => import('../components/Hero'));
@@ -15,13 +16,8 @@ const Home = () => {
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
 
-    // Handle scroll event to show/hide button
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScroll(true);
-      } else {
-        setShowScroll(false);
-      }
+      setShowScroll(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,18 +25,17 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Animated Background */}
+      <AnimatedBackground />
+
+      {/* Foreground Content */}
       <NavBar />
       <HeroSection />
-      <div className="relative bg-gradient-to-r from-gray-50 to-white py-16 px-4 sm:px-6 md:px-12 overflow-hidden">
+
+      <div className="relative py-16 px-4 sm:px-6 md:px-12">
         <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
           <Cards />
-          <img
-            src="faq.jpg"
-            alt="faq"
-            loading="lazy"
-            className="mx-auto w-90 h-90 rounded-none shadow-none bg-transparent"
-          />
           <IncomeTaxFAQ />
           <ReadyToGetStarted />
         </Suspense>
@@ -49,14 +44,15 @@ const Home = () => {
         {showScroll && (
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-all"
+            className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-all z-50"
           >
             ⬆️
           </button>
         )}
       </div>
+
       <Footer />
-    </>
+    </div>
   );
 };
 

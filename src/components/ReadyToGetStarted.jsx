@@ -5,7 +5,7 @@ const ReadyToGetStarted = () => {
    
       <div className="container mx-auto px-6 lg:px-16 flex items-center justify-center py-10">
         {/* Single Block for Text, Button, and Image */}
-        <div className="flex flex-col lg:flex-row items-center justify-between bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl space-y-6 lg:space-y-0 lg:space-x-8 overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-center justify-between bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl space-y-6 lg:space-y-0 lg:space-x-8 overflow-hidden -my-10">
           {/* Text Section */}
           <div className="text-center lg:text-left text-black space-y-6">
             <h2 className="text-3xl font-semibold font-sans">
