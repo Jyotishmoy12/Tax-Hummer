@@ -94,21 +94,26 @@ const HeadingWithIllustration = () => {
           }}
         >
           {/* Display illustration on all screens but adjust its size */}
-          <motion.img
-            src="tax.jpg"
-            alt="Tax Illustration"
-            className="w-full sm:max-w-md object-contain sm:block lg:-my-10"
-            whileHover={{
-              rotate: [0, -5, 5, 0],
-              scale: 1.0,
-              transition: { duration: 0.3 },
-            }}
-            style={{
-              pointerEvents: 'none', // Prevents interfering with hover area
-              maxWidth: '100%', // Ensure it doesn’t overflow container
-              maxHeight: '100%', // Prevents the image from going outside its container
-            }}
-          />
+          <picture>
+            {/* Add multiple formats for compatibility */}
+            <source srcSet="tax.webp 600w, tax.webp 1200w, tax.webp 1800w" sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1800px" type="image/webp" />
+            <img
+              src="tax.jpg" // Fallback to a regular image if WebP isn't supported
+              alt="Tax Illustration"
+              className="w-full sm:max-w-md object-contain sm:block lg:-my-10"
+              loading="lazy" // Enable lazy loading for the image
+              style={{
+                pointerEvents: 'none', // Prevents interfering with hover area
+                maxWidth: '100%', // Ensure it doesn’t overflow container
+                maxHeight: '100%', // Prevents the image from going outside its container
+              }}
+              whileHover={{
+                rotate: [0, -5, 5, 0],
+                scale: 1.0,
+                transition: { duration: 0.3 },
+              }}
+            />
+          </picture>
         </motion.div>
       </div>
     </div>
