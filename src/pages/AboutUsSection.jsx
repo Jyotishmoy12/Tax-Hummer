@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Mouse } from 'lucide-react';
 
 // Lazy Load Components
 const HeadingWithIllustration = lazy(() => import("../components/HeadingWithIllustration"));
@@ -53,7 +54,7 @@ const AboutUsSection = () => {
           onClick={() => scroll.scrollToTop({ smooth: "easeInOutQuad", duration: 800 })}
           className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-all z-10"
         >
-          ⬆️
+          <Mouse/>
         </button>
 
         {/* Suspense for Lazy Loading */}
