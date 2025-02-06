@@ -22,7 +22,7 @@ const ITRFiling = () => {
         <div className="flex flex-col justify-center items-center p-4 sm:p-6">
           <AnimatedHeading/>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-5xl ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-5xl justify-center items-center min-h-screen px-4 sm:px-6 py-10">
             {sections.map((section, index) => (
               <motion.div
                 key={index}

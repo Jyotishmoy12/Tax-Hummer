@@ -1,44 +1,88 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
 import { Mail, Phone, User, MessageCircle } from "lucide-react";
-import ReCAPTCHA from "react-google-recaptcha";
-import emailjs from "emailjs-com";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [captchaValid, setCaptchaValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm();
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^[0-9]{10}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid 10-digit number";
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-  const onSubmit = async (data) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+    
     try {
-      await emailjs.send(
-        "your_service_id",   
-        "your_template_id",  
-        {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          message: data.message,
-        },
-        "your_public_key"    
-      );
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+      
       setTimeout(() => {
         setSubmitted(false);
-        reset();
       }, 3000);
     } catch (error) {
-      console.error("Email sending failed:", error);
       alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -66,17 +110,19 @@ const ContactForm = () => {
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
             <div className="relative">
               <User className="absolute left-3 top-3 text-purple-500" />
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
-                {...register("name", { required: "Name is required" })}
                 className="w-full pl-10 p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-sm sm:text-base"
               />
               {errors.name && (
-                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name.message}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>
               )}
             </div>
 
@@ -84,18 +130,14 @@ const ContactForm = () => {
               <Mail className="absolute left-3 top-3 text-purple-500" />
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^\S+@\S+\.\S+$/,
-                    message: "Invalid email address",
-                  },
-                })}
                 className="w-full pl-10 p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-sm sm:text-base"
               />
               {errors.email && (
-                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
@@ -103,30 +145,28 @@ const ContactForm = () => {
               <Phone className="absolute left-3 top-3 text-purple-500" />
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Your Phone Number"
-                {...register("phone", {
-                  required: "Phone number is required",
-                  pattern: {
-                    value: /^[0-9]{10}$/,
-                    message: "Enter a valid 10-digit number",
-                  },
-                })}
                 className="w-full pl-10 p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-sm sm:text-base"
               />
               {errors.phone && (
-                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone.message}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>
               )}
             </div>
 
             <div className="relative">
               <MessageCircle className="absolute left-3 top-3 text-purple-500" />
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
-                {...register("message", { required: "Message is required" })}
                 className="w-full pl-10 p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all h-24 sm:h-28 resize-none text-sm sm:text-base"
               />
               {errors.message && (
-                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message.message}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message}</p>
               )}
             </div>
 
