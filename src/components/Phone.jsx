@@ -2,8 +2,10 @@ import React from 'react';
 import { Bell, User, Search, Home, FileText, ClipboardList, Sparkles, Wallet, TrendingUp, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 import TaxHummerLogo from './TaxHummerLogo';
+import { useNavigate } from 'react-router-dom';
 
 const TaxApp = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative z-10 lg:w-1/2 flex justify-center items-center">
       <motion.div 
@@ -85,12 +87,12 @@ const TaxApp = () => {
               >
                 <Sparkles className="w-4 h-4 text-purple-400 opacity-50" />
               </motion.div>
-              <h2 className="text-lg font-bold font-sans">Simplify Your Taxes</h2>
+              <h2 className="text-lg font-semibold font-sans">Simplify Your Taxes</h2>
               <p className="text-sm text-gray-600 mb-2 font-sans">File in Minutes with Ease!</p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-purple-500 text-white px-4 py-1.5 rounded-lg text-sm font-sans"
+                className="bg-purple-500 text-white px-4 py-1.5 rounded-lg text-sm font-sans cursor-pointer" onClick={() => navigate('/itrfiling')}
               >
                 Start Filing
               </motion.button>
@@ -107,7 +109,7 @@ const TaxApp = () => {
               >
                 <Wallet className="w-4 h-4 text-purple-600 opacity-50" />
               </motion.div>
-              <h2 className="text-lg font-bold font-sans">Hire Financial Advisor</h2>
+              <h2 className="text-lg font-semibold font-sans">Hire Financial Advisor</h2>
               <p className="text-sm text-gray-600 mb-2 font-sans">Start investing in mutual funds for saving tax</p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
@@ -124,7 +126,7 @@ const TaxApp = () => {
                 className="bg-purple-200 p-4 rounded-xl"
               >
                 <TrendingUp className="w-4 h-4 text-purple-600 mb-2" />
-                <h3 className="text-base font-bold font-sans">Top mutual funds</h3>
+                <h3 className="text-base font-semibold font-sans">Top mutual funds</h3>
                 <p className="text-xs text-gray-600 font-sans">Axis bank small cap funds</p>
               </motion.div>
               <motion.div 
@@ -132,7 +134,7 @@ const TaxApp = () => {
                 className="bg-purple-100 p-4 rounded-xl"
               >
                 <BookOpen className="w-4 h-4 text-purple-600 mb-2" />
-                <h3 className="text-base font-bold font-sans">Blogs</h3>
+                <h3 className="text-base font-semibold font-sans">Blogs</h3>
                 <p className="text-xs text-gray-600 font-sans">Continue Reading...</p>
               </motion.div>
             </div>
@@ -141,7 +143,7 @@ const TaxApp = () => {
               whileHover={{ scale: 1.02 }}
               className="bg-purple-100 p-4 rounded-xl"
             >
-              <h3 className="text-base font-bold font-sans">Your Tax Summary</h3>
+              <h3 className="text-base font-semibold font-sans">Your Tax Summary</h3>
               <p className="text-xs text-gray-600 font-sans">See Now</p>
             </motion.div>
 
@@ -149,7 +151,7 @@ const TaxApp = () => {
               whileHover={{ scale: 1.02 }}
               className="bg-purple-200 p-4 rounded-xl"
             >
-              <h2 className="text-lg font-bold font-sans">Investment To Save</h2>
+              <h2 className="text-lg font-semibold font-sans">Investment To Save</h2>
               <p className="text-sm text-gray-600 mb-2 font-sans">Start investing in mutual funds for saving tax</p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}

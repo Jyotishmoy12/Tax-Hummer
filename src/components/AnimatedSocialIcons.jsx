@@ -12,25 +12,25 @@ const AnimatedSocialIcons = () => {
       Icon: Twitter, 
       href: "#", 
       color: "hover:text-blue-400",
-      hoverEffect: "group hover:rotate-12 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2"
+      hoverEffect: "group hover:rotate-12 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2  text-gray-800"
     },
     { 
       Icon: Facebook, 
       href: "#", 
       color: "hover:text-blue-600",
-      hoverEffect: "group hover:rotate-6 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2"
+      hoverEffect: "group hover:rotate-6 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2  text-gray-800"
     },
     { 
       Icon: Linkedin, 
       href: "#", 
       color: "hover:text-blue-700",
-      hoverEffect: "group hover:-rotate-12 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2"
+      hoverEffect: "group hover:-rotate-12 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2  text-gray-800"
     },
     { 
       Icon: Instagram, 
       href: "#", 
       color: "hover:text-pink-500",
-      hoverEffect: "group hover:rotate-6 hover:scale-110 hover:bg-pink-50/20 rounded-full p-2"
+      hoverEffect: "group hover:rotate-6 hover:scale-110 hover:bg-pink-50/20 rounded-full p-2  text-gray-800"
     }
   ];
 
