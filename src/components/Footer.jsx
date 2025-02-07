@@ -26,7 +26,7 @@ const Footer = () => {
             text-4xl 
             font-extrabold
             bg-clip-text 
-            text-gray-800
+            text-white
             animate-gradient-x 
             hover:scale-105 
             transition-transform 
@@ -42,7 +42,7 @@ const Footer = () => {
             Tax Hummer
             </h2>
           </div>
-          <p className="text-gray-800 px-7 font-sans hover:text-white">
+          <p className="text-white px-7 font-sans hover:text-white">
             Simplifying tax management and financial guidance for individuals and businesses.
           </p>
           {/* Illustration Space */}
@@ -51,44 +51,44 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-sans text-gray-800  hover:text-white cursor-pointer">
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-sans text-white hover:text-white cursor-pointer">
             Quick Links
           </h3>
       
           <nav className="space-y-2 px-7">
-            <Link to="/" className="block hover:text-lavender-200 transition-colors font-sans text-gray-800  hover:text-white">Home</Link>
-            <Link to="/services" className="block hover:text-lavender-200 transition-colors font-sans text-gray-800  hover:text-white">Services</Link>
-            <Link to="/resources" className="block hover:text-lavender-200 transition-colors font-sans text-gray-800  hover:text-white">Resources</Link>
-            <Link to="/about" className="block hover:text-lavender-200 transition-colors font-sans text-gray-800  hover:text-white">About</Link>
-            <Link to="/get-started" className="block hover:text-lavender-200 transition-colors font-sans text-gray-800  hover:text-white">Contact</Link>
+            <Link to="/" className="block hover:text-lavender-200 transition-colors font-sans text-white hover:text-white">Home</Link>
+            <Link to="/services" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">Services</Link>
+            <Link to="/resources" className="block hover:text-lavender-200 transition-colors font-sans text-white hover:text-white">Resources</Link>
+            <Link to="/about" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">About</Link>
+            <Link to="/get-started" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">Contact</Link>
           </nav>
       
         </div>
 
         {/* Contact Information */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-sans  text-gray-800  hover:text-white">
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-sans  text-white  hover:text-white">
             Contact Us
           </h3>
           <div className="space-y-3 px-7">
             <div className="flex items-center space-x-3">
-              <MapPin className=" text-gray-800  hover:text-white" />
-              <span className="font-sans  text-gray-800  hover:text-white">123 Tax Street, Financial District</span>
+              <MapPin className=" text-white  hover:text-white" />
+              <span className="font-sans  text-white  hover:text-white">123 Tax Street, Financial District</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Phone className=" text-gray-800  hover:text-white" />
-              <span className="font-sans  text-gray-800  hover:text-white">+91 (555) TAX-HELP</span>
+              <Phone className=" text-white  hover:text-white" />
+              <span className="font-sans  text-white  hover:text-white">+91 (555) TAX-HELP</span>
             </div>
             <div className="flex items-center space-x-3  hover:text-white">
-              <Mail className=" text-gray-800  hover:text-white" />
-              <span className="font-sans  text-gray-800  hover:text-white">support@taxhummer.com</span>
+              <Mail className=" text-white  hover:text-white" />
+              <span className="font-sans  text-white  hover:text-white">support@taxhummer.com</span>
             </div>
           </div>
         </div>
 
         {/* Social Media */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-sans  text-gray-800  hover:text-white">
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2 px-7 font-sans  text-white  hover:text-white">
             Connect With Us
           </h3>
           <div className="flex space-x-4">
@@ -100,7 +100,7 @@ const Footer = () => {
 
       {/* Copyright & Legal */}
       <div className="bg-purple-800 text-center py-4">
-        <p className="text-sm text-gray-950 font-sans  hover:text-white">
+        <p className="text-sm text-white font-sans  hover:text-white">
           © 2025 Tax Hummer. All Rights Reserved | 
           <a href="#" className="ml-2 hover:text-lavender-200  hover:text-white ">
             Privacy Policy
