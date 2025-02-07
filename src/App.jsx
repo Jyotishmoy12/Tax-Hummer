@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import AboutUsSection from './pages/AboutUsSection'
 import GetStarted from './pages/GetStarted'
 import ITRFiling from './pages/ITRFiling'
+import ContactForm from './pages/ContactPage'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/about" element={<AboutUsSection />} />
         <Route path ="/get-started" element={<GetStarted />} />
         <Route path="/itrfiling" element={<ITRFiling />} />
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
     </Router>
   )
