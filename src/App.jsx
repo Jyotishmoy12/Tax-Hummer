@@ -5,10 +5,12 @@ import AboutUsSection from './pages/AboutUsSection'
 import GetStarted from './pages/GetStarted'
 import ITRFiling from './pages/ITRFiling'
 import ContactForm from './pages/ContactPage'
+import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUsSection />} />
