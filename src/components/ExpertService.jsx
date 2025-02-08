@@ -4,7 +4,7 @@ import AnimatedBackground from './AnimatedBackground';
 
 const ExpertService = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto rounded-xl  my-7 px-4 sm:px-6 lg:px-8 relative">
+    <div className="w-full max-w-4xl mx-auto rounded-xl  my-10 px-4 sm:px-6 lg:px-8 relative">
       <AnimatedBackground />
 
       <div className="w-full bg-white/80 backdrop-blur-md shadow-xl rounded-3xl p-6 sm:p-8 md:p-12 border border-purple-300/40 text-center">
