@@ -3,7 +3,8 @@ import React from 'react';
 const ReadyToGetStarted = () => {
   return (
    
-      <div className="container mx-auto px-6 lg:px-16 flex items-center justify-center py-10">
+      <div className="w-full max-w-4xl mx-auto rounded-xl  my-25 px-4 sm:px-6 lg:px-8 relative
+      ">
         {/* Single Block for Text, Button, and Image */}
         <div className="flex flex-col lg:flex-row items-center justify-between bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl space-y-6 lg:space-y-0 lg:space-x-8 overflow-hidden -my-10">
           {/* Text Section */}
