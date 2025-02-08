@@ -73,15 +73,15 @@ const Footer = () => {
           <div className="space-y-3 px-7">
             <div className="flex items-center space-x-3">
               <MapPin className=" text-white  hover:text-white" />
-              <span className="font-sans  text-white  hover:text-white">123 Tax Street, Financial District</span>
+              <span className="font-sans  text-white  hover:text-white">Guwahati, assam, India</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className=" text-white  hover:text-white" />
-              <span className="font-sans  text-white  hover:text-white">+91 (555) TAX-HELP</span>
+              <span className="font-sans  text-white  hover:text-white">+91-9101306796</span>
             </div>
             <div className="flex items-center space-x-3  hover:text-white">
               <Mail className=" text-white  hover:text-white" />
-              <span className="font-sans  text-white  hover:text-white">support@taxhummer.com</span>
+              <span className="font-sans  text-white  hover:text-white">support@taxhummer.in</span>
             </div>
           </div>
         </div>

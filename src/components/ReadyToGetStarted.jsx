@@ -18,7 +18,7 @@ const ReadyToGetStarted = () => {
             <h2 className="text-3xl font-semibold font-sans">
               Ready to Get Started?
             </h2>
-            <button className="bg-purple-600 text-white py-2 px-6 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300 font-sans w-full sm:w-auto cursor-pointer" onClick={handleClick}>
+            <button className="bg-purple-600 text-white py-2 px-6 rounded-full text-lg font-medium hover:bg-purple-700 shadow-lg transition-all duration-300 font-sans w-full sm:w-auto cursor-pointer hover:scale-105" onClick={handleClick}>
            View Our Plans
           </button>
           </div>

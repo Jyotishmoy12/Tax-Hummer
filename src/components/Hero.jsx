@@ -68,9 +68,9 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            Making Tax Filing 
+            Smart file and Save money  
             <span className="italic font-roboto text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 relative">
-              Easy
+            in  
               <motion.div 
                 className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -84,11 +84,11 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            Come
+            three  
             <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-roboto">
-              Join
+            simple
             </span>
-            Us
+            steps
           </motion.span>
         </h1>
         

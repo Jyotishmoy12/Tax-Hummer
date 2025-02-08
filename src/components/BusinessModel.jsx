@@ -68,7 +68,7 @@ const BusinessModel = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative my-20">
       <h2 className="text-4xl md:text-5xl font-bold text-center text-purple-700 mb-10">
-        💼 Our Business Plans
+        💼 Our Plans
       </h2>
 
       {/* Horizontal Scroll Plans */}

@@ -27,9 +27,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative bg-white min-h-screen overflow-hidden">
       {/* Animated Background */}
-      <AnimatedBackground />
+      {/* <AnimatedBackground /> */}
 
       {/* Foreground Content */}
       <NavBar />
@@ -38,8 +38,9 @@ const Home = () => {
       <div className="relative py-16 px-4 sm:px-6 md:px-12">
         <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
           <Cards />
-          <IncomeTaxFAQ />
           <ExpertService/>
+          <IncomeTaxFAQ />
+          
           <ReadyToGetStarted />
         </Suspense>
 
