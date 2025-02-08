@@ -3,6 +3,7 @@ import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground'; 
 import { Mouse } from 'lucide-react';
+import ExpertService from '../components/ExpertService';
 
 // Lazy Loading Components
 const HeroSection = lazy(() => import('../components/Hero'));
@@ -38,6 +39,7 @@ const Home = () => {
         <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
           <Cards />
           <IncomeTaxFAQ />
+          <ExpertService/>
           <ReadyToGetStarted />
         </Suspense>
 

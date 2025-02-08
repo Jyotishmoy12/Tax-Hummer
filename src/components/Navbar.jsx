@@ -11,17 +11,19 @@ import {
   MessageSquare,  
   Laptop,
   Headphones,
-  ChevronRight
+  ChevronRight,
+  Calculator,
 } from 'lucide-react';
 import TaxHummerLogo from './TaxHummerLogo';
-import { FaFileInvoice } from "react-icons/fa";
+import { FaFileInvoice, FaClipboardList,FaQuestionCircle} from "react-icons/fa";
 import { MdHomeRepairService } from "react-icons/md";
 
 const menuItems = {
   products: [
-    { icon: <Laptop className="w-5 h-5" />, label: 'Platform', to: '/platform' },
+    { icon: <Calculator className="w-5 h-5" />, label: 'Tax Calculator', to: '/taxcalculator' },
     { icon: <FaFileInvoice className="w-5 h-5" />, label: 'ITR Filing', to: '/itrfiling' },
-    { icon: <MdHomeRepairService className="w-5 h-5" />, label: 'Consulting Service', to: '/service' },
+    { icon: <MdHomeRepairService className="w-5 h-5" />, label: 'Tax Consulting Service', to: '/service' },
+    {icon: <FaClipboardList className="w-5 h-5" />, label: 'GST Filing', to: '/gstfiling'}
   ],
   resources: [
     { icon: <BookOpen className="w-5 h-5" />, label: 'Documentation', to: '/docs' },
@@ -32,6 +34,7 @@ const menuItems = {
     { icon: <Building2 className="w-5 h-5" />, label: 'About Us', to: '/about' },
     { icon: <Users className="w-5 h-5" />, label: 'Careers', to: '/careers' },
     { icon: <MessageSquare className="w-5 h-5" />, label: 'Contact', to: '/get-started' },
+    { icon: <FaQuestionCircle className="w-5 h-5" />, label: 'FAQ', to: '/faq' },
   ]
 };
 

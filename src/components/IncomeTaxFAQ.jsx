@@ -94,7 +94,7 @@ const TaxFAQ = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg my-10">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg my-7">
       {/* Header */}
 
       <div className="text-center py-6 px-4 border-b border-gray-100">

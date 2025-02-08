@@ -6,6 +6,7 @@ import GetStarted from './pages/GetStarted'
 import ITRFiling from './pages/ITRFiling'
 import ContactForm from './pages/ContactPage'
 import ScrollToTop from './components/ScrollToTop'
+import FAQpage from './pages/FAQpage'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path ="/get-started" element={<GetStarted />} />
         <Route path="/itrfiling" element={<ITRFiling />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/faq" element={<FAQpage />} /> 
       </Routes>
     </Router>
   )

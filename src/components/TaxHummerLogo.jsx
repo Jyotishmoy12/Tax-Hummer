@@ -25,7 +25,7 @@ const TaxHummerLogo = () => {
           leading-8 
           font-semibold
           text-purple-700
-          font-[playfair-display]
+          font-[Helvetica]
         "
       >
         Tax Hummer

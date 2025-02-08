@@ -4,7 +4,7 @@ import Phone from './Phone';
 
 const HeroSection = () => {
   return (
-    <div className="relative flex flex-col lg:flex-row items-center justify-between min-h-[80vh] px-4 py-16 overflow-hidden gap-5 lg:gap-2 lg:mt-10">
+    <div className="relative flex flex-col lg:flex-row items-center justify-between min-h-[80vh] px-4 py-16 overflow-hidden gap-5 lg:gap-2 lg:mt-10 my-7">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Background */}

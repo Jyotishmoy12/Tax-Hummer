@@ -37,7 +37,7 @@ const Footer = () => {
             drop-shadow-lg
             hover:text-white
             italic
-            font-[playfair-display]
+            font-[Helvetica]
             ">
             Tax Hummer
             </h2>

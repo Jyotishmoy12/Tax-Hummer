@@ -6,7 +6,7 @@ const Card = ({ title, icon, description }) => {
   return (
     <>
     
-    <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between items-center transition-all transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r cursor-pointer w-full sm:w-80 md:w-96 lg:w-1/3">
+    <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between items-center transition-all transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r cursor-pointer w-full sm:w-80 md:w-96 lg:w-1/3 my-7">
       <div className="text-4xl text-purple-600 mb-4 ">
         {icon}
       </div>
