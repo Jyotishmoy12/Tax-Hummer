@@ -1,87 +1,68 @@
-import React from 'react';
+import React from "react";
 
-const ProductsForEveryone = () => {
+const ProductGrid = () => {
+  const cards = [
+    { title: "For Enterprise", description: "Placeholder description 1", illustration: "627.jpg" },
+    { title: "For Tax Experts", description: "Placeholder description 2", illustration: "54740.jpg" },
+    { title: "For SMEs", description: "Placeholder description 3", illustration: "5334521.jpg" },
+    { title: "For Individuals", description: "Placeholder description 4", illustration: "10075609.jpg" },
+  ];
+
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6 lg:px-16 text-center">
-        {/* Section Title */}
-        <h2 className="text-3xl lg:text-4xl font-semibold text-black mb-8">
-          Products for Everyone
-        </h2>
-
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Product 1 */}
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="illu1.jpg" // Change this to your image path
-              alt="Product 1"
-              className="w-full h-64 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
-            <div className="absolute bottom-0 p-6 text-white z-10">
-              <h3 className="text-2xl font-semibold">Product 1</h3>
-              <p className="mt-2">A brief description of the product.</p>
-              <button className="mt-4 bg-purple-600 text-white py-2 px-6 rounded-full text-lg hover:bg-purple-700 transition duration-300">
-                Learn More
-              </button>
+    <section className="py-10 px-4 bg-white">
+      <div className="max-w-7xl mx-auto grid-cols-1 lg:grid-cols-3 gap-8 items-center hidden sm:grid">
+        {/* Left Cards Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:col-span-2">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white shadow-md hover:shadow-xl transition flex flex-col justify-between"
+            >
+              <div className="h-32 flex justify-center items-center mb-4">
+                <img src={card.illustration} alt={`Illustration for ${card.title}`} className="h-35 w-35 object-contain " />
+              </div>
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-bold">{card.title}</h3>
+                <span className="text-xl">→</span>
+              </div>
             </div>
-          </div>
-
-          {/* Product 2 */}
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="illu2.jpg" // Change this to your image path
-              alt="Product 2"
-              className="w-full h-64 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
-            <div className="absolute bottom-0 p-6 text-white z-10">
-              <h3 className="text-2xl font-semibold">Product 2</h3>
-              <p className="mt-2">A brief description of the product.</p>
-              <button className="mt-4 bg-purple-600 text-white py-2 px-6 rounded-full text-lg hover:bg-purple-700 transition duration-300">
-                Learn More
-              </button>
-            </div>
-          </div>
-
-          {/* Product 3 */}
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="illu3.jpg" // Change this to your image path
-              alt="Product 3"
-              className="w-full h-64 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
-            <div className="absolute bottom-0 p-6 text-white z-10">
-              <h3 className="text-2xl font-semibold">Product 3</h3>
-              <p className="mt-2">A brief description of the product.</p>
-              <button className="mt-4 bg-purple-600 text-white py-2 px-6 rounded-full text-lg hover:bg-purple-700 transition duration-300">
-                Learn More
-              </button>
-            </div>
-          </div>
-
-          {/* Product 4 */}
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="illu4.jpg" // Change this to your image path
-              alt="Product 4"
-              className="w-full h-64 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
-            <div className="absolute bottom-0 p-6 text-white z-10">
-              <h3 className="text-2xl font-semibold">Product 4</h3>
-              <p className="mt-2">A brief description of the product.</p>
-              <button className="mt-4 bg-purple-600 text-white py-2 px-6 rounded-full text-lg hover:bg-purple-700 transition duration-300">
-                Learn More
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
+
+        {/* Right Heading Section */}
+        <div className="text-left lg:pl-8">
+          <h2 className="text-5xl font-extrabold">Products for everyone</h2>
+          <p className="text-gray-600 mt-4">
+            Built for scale, made by experts, and secure by design. Bringing you
+            maximum tax savings, unmatched speed, and complete peace of mind.
+          </p>
+        </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-4 mt-8 sm:hidden -my-10">
+        <h2 className="text-2xl font-extrabold col-span-2">Products for everyone</h2>
+        <p className="text-gray-600 mt-2 col-span-2">
+          Built for scale, made by experts, and secure by design. Bringing you
+          maximum tax savings, unmatched speed, and complete peace of mind.
+        </p>
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="p-4 bg-white shadow-md hover:shadow-xl transition flex flex-col justify-between"
+          >
+            <div className="h-24 flex justify-center items-center mb-2">
+              <img src={card.illustration} alt={`Illustration for ${card.title}`} className="h-20 w-20 object-contain" />
+            </div>
+            <div className="flex justify-between items-center">
+              <h3 className="text-sm font-bold">{card.title}</h3>
+              <span className="text-lg">→</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default ProductsForEveryone;
+export default ProductGrid;

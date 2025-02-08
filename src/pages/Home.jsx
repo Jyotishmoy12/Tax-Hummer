@@ -38,6 +38,7 @@ const Home = () => {
       <div className="relative py-16 px-4 sm:px-6 md:px-12">
         <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
           <Cards />
+          <ProductsForEveryone/>
           <ExpertService/>
           <IncomeTaxFAQ />
           

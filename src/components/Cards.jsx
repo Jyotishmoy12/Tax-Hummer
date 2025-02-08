@@ -42,7 +42,7 @@ const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, i
         </div>
 
         {/* Button always visible at bottom */}
-        <button className="absolute bottom-6 left-6 right-6 bg-purple-500 text-white py-3 px-6 
+        <button className="absolute bottom-6 left-6 right-6 bg-purple-500 text-white py-3 px-6 rounded-3xl
           transition-all duration-300 hover:bg-purple-500 shadow-md group-hover:bg-purple-500">
           {buttonText}
         </button>
@@ -59,7 +59,7 @@ const ServiceCards = () => {
       description: 'Easily file your Income Tax Returns with our intuitive platform.',
       buttonText: 'See product',
       iconBgColor: 'bg-purple-600',
-      hoverBgColor: 'group-hover:bg-gradient-to-br from-purple-400 to-purple-200',
+      hoverBgColor: 'group-hover:bg-gradient-to-br from-purple-200 to-purple-100',
       hoverContent: [
         'Automated tax calculation system',
         'Real-time financial monitoring',
@@ -73,7 +73,7 @@ const ServiceCards = () => {
       description: 'Our connected finance ecosystem is enabling new paths to efficiency.',
       buttonText: 'Explore more',
       iconBgColor: 'bg-blue-100',
-      hoverBgColor: 'group-hover:bg-gradient-to-br from-blue-400 to-blue-200',
+      hoverBgColor: 'group-hover:bg-gradient-to-br from-blue-200 to-blue-100',
       hoverContent: [
         'Integrated financial systems',
         'Seamless data synchronization',
@@ -87,7 +87,7 @@ const ServiceCards = () => {
       description: 'Know your Tax liability as per the latest budget 2025 updates.',
       buttonText: 'Calculate Now',
       iconBgColor: 'bg-green-100',
-      hoverBgColor: 'group-hover:bg-gradient-to-br from-green-200 to-green-200',
+      hoverBgColor: 'group-hover:bg-gradient-to-br from-green-200 to-green-100',
       hoverContent: [
         'Latest tax regulations',
         'Custom tax scenarios',
