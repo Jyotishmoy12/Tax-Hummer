@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, iconBgColor, hoverBgColor }) => {
+  const [isTouched, setIsTouched] = useState(false);
+
   return (
-    <div className="relative group h-[320px]">
+    <div 
+      className={`relative ${isTouched ? 'group' : 'group'} h-[320px]`}
+      onTouchStart={() => setIsTouched(true)}
+      onTouchEnd={() => setIsTouched(false)}
+    >
       {/* Base card */}
       <div className={`absolute inset-0 transition-all duration-300 -py-10 ${hoverBgColor} group-hover:shadow-xl rounded-2xl`}>
         {/* Centered image container that overlaps */}
@@ -48,7 +54,7 @@ const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, i
 const ServiceCards = () => {
   const services = [
     {
-      imageSrc: 'itr.webp', // Replace with the actual image path
+      imageSrc: 'itr.webp',
       title: 'ITR File',
       description: 'Easily file your Income Tax Returns with our intuitive platform.',
       buttonText: 'See product',
@@ -62,7 +68,7 @@ const ServiceCards = () => {
       ],
     },
     {
-      imageSrc: 'gst.webp', // Replace with the actual image path
+      imageSrc: 'gst.webp',
       title: 'GST Filing',
       description: 'Our connected finance ecosystem is enabling new paths to efficiency.',
       buttonText: 'Explore more',
@@ -76,7 +82,7 @@ const ServiceCards = () => {
       ],
     },
     {
-      imageSrc: 'calculator.png', // Replace with the actual image path
+      imageSrc: 'calculator.png',
       title: 'Calculate Tax Liability',
       description: 'Know your Tax liability as per the latest budget 2025 updates.',
       buttonText: 'Calculate Now',
@@ -103,7 +109,3 @@ const ServiceCards = () => {
 };
 
 export default ServiceCards;
-
-
-// credits:
-// <a href="https://www.freepik.com/search">Icon by surang</a>
