@@ -3,20 +3,47 @@ import { BarChart, Bar, YAxis, ResponsiveContainer, Cell } from "recharts"
 import { Info } from "lucide-react"
 
 const InfoTooltip = ({ content }) => {
+  const [isTooltipVisible, setTooltipVisible] = useState(false)
+
+  const handleTouchStart = () => {
+    setTooltipVisible(true)
+  }
+
+  const handleTouchEnd = () => {
+    setTooltipVisible(false)
+  }
+
+  const handleMouseEnter = () => {
+    setTooltipVisible(true)
+  }
+
+  const handleMouseLeave = () => {
+    setTooltipVisible(false)
+  }
+
   return (
-    <div className="group relative inline-block">
+    <div
+      className="relative inline-block"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <Info className="h-4 w-4 text-gray-400 cursor-pointer" />
-      <div className="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full w-64 opacity-0 transition-opacity group-hover:opacity-100">
-        <div className="flex items-center justify-center">
-          <div className="bg-black text-white text-sm rounded-lg py-2 px-3">{content}</div>
+      {isTooltipVisible && (
+        <div className="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full w-64 opacity-100 transition-opacity">
+          <div className="flex items-center justify-center">
+            <div className="bg-black text-white text-sm rounded-lg py-2 px-3">{content}</div>
+          </div>
+          <div className="absolute left-1/2 -translate-x-1/2 top-full">
+            <div className="w-2 h-2 bg-black rotate-45" />
+          </div>
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 top-full">
-          <div className="w-2 h-2 bg-black rotate-45" />
-        </div>
-      </div>
+      )}
     </div>
   )
 }
+
 
 const getTooltipContent = (field) => {
   const tooltips = {
