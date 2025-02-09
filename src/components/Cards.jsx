@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, iconBgColor, hoverBgColor, isActive, onTouch, onButtonClick }) => {
-  // Function to handle touch events
+const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, iconBgColor, hoverBgColor, isActive, onTouch, onButtonClick, variant }) => {
   const handleTouch = (e) => {
     e.preventDefault();
     onTouch();
   };
 
-  // Function to handle button click
   const handleButtonClick = (e) => {
-    e.stopPropagation(); // Prevent card touch/hover effects
-    onButtonClick(); // Call the custom click handler
+    e.stopPropagation();
+    onButtonClick();
+  };
+
+  // Map variants to specific background classes
+  const getBackgroundClasses = () => {
+    switch (variant) {
+      case 'purple':
+        return `${isActive ? 'bg-gradient-to-br from-purple-200 to-purple-100' : ''} hover:bg-gradient-to-br hover:from-purple-200 hover:to-purple-100`;
+      case 'blue':
+        return `${isActive ? 'bg-gradient-to-br from-blue-200 to-blue-100' : ''} hover:bg-gradient-to-br hover:from-blue-200 hover:to-blue-100`;
+      case 'green':
+        return `${isActive ? 'bg-gradient-to-br from-green-200 to-green-100' : ''} hover:bg-gradient-to-br hover:from-green-200 hover:to-green-100`;
+      default:
+        return '';
+    }
   };
 
   return (
@@ -21,14 +33,7 @@ const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, i
       role="button"
       tabIndex={0}
     >
-      {/* Base card */}
-      <div className={`absolute inset-0 transition-all duration-300 -py-10 
-        ${isActive ? hoverBgColor : ''} 
-        group-hover:${hoverBgColor}
-        group-hover:shadow-xl 
-        rounded-2xl`}
-      >
-        {/* Centered image container */}
+      <div className={`absolute inset-0 transition-all duration-300 -py-10 rounded-2xl hover:shadow-xl ${getBackgroundClasses()}`}>
         <div
           className={`absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 ${iconBgColor} 
           flex items-center justify-center transition-all duration-300 
@@ -39,7 +44,6 @@ const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, i
           <img src={imageSrc} alt="service icon" className="w-8 h-8" />
         </div>
 
-        {/* Main content */}
         <div className="mt-12 p-6 text-center">
           <h2 className={`text-2xl font-extrabold text-gray-800 mb-3 
             transition-opacity duration-300
@@ -57,7 +61,6 @@ const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, i
             {description}
           </p>
 
-          {/* Hover content */}
           <div
             className={`absolute inset-x-6 top-32 transition-all duration-300
               ${isActive ? 'opacity-100 visible' : 'opacity-0 invisible'} 
@@ -71,7 +74,6 @@ const ServiceCard = ({ imageSrc, title, description, buttonText, hoverContent, i
           </div>
         </div>
 
-        {/* Button with click handler */}
         <button 
           onClick={handleButtonClick}
           className="absolute bottom-6 left-6 right-6 bg-purple-500 text-white py-3 px-6 rounded-3xl
@@ -109,9 +111,9 @@ const ServiceCards = () => {
       description: 'Easily file your Income Tax Returns with our intuitive platform.',
       buttonText: 'See product',
       iconBgColor: 'bg-purple-600',
-      hoverBgColor: 'bg-gradient-to-br from-purple-200 to-purple-100',
+      variant: 'purple',
       onButtonClick: () => {
-        navigate('/plans'); // Navigate to ITR specific plans
+        navigate('/plans');
       },
       hoverContent: [
         'Automated tax calculation system',
@@ -126,9 +128,9 @@ const ServiceCards = () => {
       description: 'Our connected finance ecosystem is enabling new paths to efficiency.',
       buttonText: 'Explore more',
       iconBgColor: 'bg-blue-100',
-      hoverBgColor: 'bg-gradient-to-br from-blue-200 to-blue-100',
+      variant: 'blue',
       onButtonClick: () => {
-        navigate('/gst-services'); // Navigate to GST services page
+        navigate('/gst-services');
       },
       hoverContent: [
         'Integrated financial systems',
@@ -143,9 +145,9 @@ const ServiceCards = () => {
       description: 'Know your Tax liability as per the latest budget 2025 updates.',
       buttonText: 'Calculate Now',
       iconBgColor: 'bg-green-100',
-      hoverBgColor: 'bg-gradient-to-br from-green-200 to-green-100',
+      variant: 'green',
       onButtonClick: () => {
-        navigate('/tax-calculator'); // Navigate to tax calculator page
+        navigate('/tax-calculator');
       },
       hoverContent: [
         'Latest tax regulations',

@@ -12,7 +12,7 @@ const ProductsForEveryone = () => {
       fullDescription: "This plan is for salaried individuals with straightforward income sources such as salary, bank interest, and savings. It simplifies tax filing for employees by considering deductions under various sections like 80C, 80D, and standard deductions.",
       mobileDescription: "For salaried individuals with basic income sources. Includes standard deductions and basic tax filing.",
       illustration: "627.jpg",
-      hoverGradient: "bg-blue-700",
+      hoverGradient: "bg-blue-400",
       path: "/plans"
     },
     { 
@@ -21,7 +21,7 @@ const ProductsForEveryone = () => {
       fullDescription: "A more advanced version of the Salary Individual plan, this option is for salaried individuals with additional income sources, such as rental income, business side income, or capital gains from investments. It offers a more detailed tax optimization strategy.",
       mobileDescription: "Advanced plan for multiple income sources, including rental and business income.",
       illustration: "54740.jpg",
-      hoverGradient: "bg-orange-700",
+      hoverGradient: "bg-orange-400",
       path: "/plans"
     },
     { 
@@ -30,7 +30,7 @@ const ProductsForEveryone = () => {
       fullDescription: "Designed for individuals earning from the sale of stocks, mutual funds, real estate, or other capital assets, this plan helps in computing long-term and short-term capital gains, indexation benefits, and applicable exemptions under Income Tax laws.",
       mobileDescription: "For stock, mutual fund & real estate gains. Includes capital gains calculation.",
       illustration: "5334521.jpg",
-      hoverGradient: "bg-green-600",
+      hoverGradient: "bg-green-400",
       path: "/plans"
     },
     { 
@@ -39,7 +39,7 @@ const ProductsForEveryone = () => {
       fullDescription: "This plan is for individuals with foreign income, including NRIs, freelancers with international clients, or those receiving foreign dividends. It ensures DTAA compliance and helps claim foreign tax credits.",
       mobileDescription: "For NRIs & foreign income. Includes DTAA compliance & tax credits.",
       illustration: "10075609.jpg",
-      hoverGradient: "bg-purple-700",
+      hoverGradient: "bg-purple-400",
       path: "/plans"
     },
   ];

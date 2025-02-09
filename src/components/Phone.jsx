@@ -87,6 +87,7 @@ const TaxApp = () => {
               >
                 <Sparkles className="w-4 h-4 text-purple-400 opacity-50" />
               </motion.div>
+              
               <h2 className="text-lg font-semibold font-sans">Simplify Your Taxes</h2>
               <p className="text-sm text-gray-600 mb-2 font-sans">File in Minutes with Ease!</p>
               <motion.button 
@@ -96,18 +97,45 @@ const TaxApp = () => {
               >
                 Start Filing
               </motion.button>
+              
             </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="bg-purple-100 p-4 rounded-xl relative overflow-hidden"
+            >
+              <motion.div
+                className="absolute right-2 top-2"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="w-4 h-4 text-purple-400 opacity-50" />
+              </motion.div>
+              
+              <h2 className="text-lg font-semibold font-sans">Tax Calculator</h2>
+              <p className="text-sm text-gray-600 mb-2 font-sans">Calculate your tax with Ease!</p>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-purple-500 text-white px-4 py-1.5 rounded-lg text-sm font-sans cursor-pointer" onClick={() => navigate('/taxcalculator')}
+              >
+                Calculate
+              </motion.button>
+              
+            </motion.div>
+            
 
             <motion.div 
               whileHover={{ scale: 1.02 }}
               className="bg-purple-200 p-4 rounded-xl relative"
             >
+              
               <motion.div
                 className="absolute right-2 top-2"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 <Wallet className="w-4 h-4 text-purple-600 opacity-50" />
+                
               </motion.div>
               <h2 className="text-lg font-semibold font-sans">Hire Financial Advisor</h2>
               <p className="text-sm text-gray-600 mb-2 font-sans">Start investing in mutual funds for saving tax</p>
