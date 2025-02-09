@@ -81,8 +81,8 @@ const CalculatorComponent=()=> {
             key={index}
             className={`px-4 py-2 text-sm font-medium border-b-2 focus:outline-none ${
               activeTab === index
-                ? "border-blue-500 text-blue-500"
-                : "border-transparent text-gray-600 hover:text-blue-500"
+                ? "border-purple-500 text-purple-500"
+                : "border-transparent text-gray-600 hover:text-purple-400"
             }`}
             onClick={() => setActiveTab(index)}
           >
@@ -104,7 +104,7 @@ const CalculatorComponent=()=> {
         )}
         {activeTab < tabs.length - 1 ? (
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600"
             onClick={() => setActiveTab((prev) => prev + 1)}
           >
             Continue

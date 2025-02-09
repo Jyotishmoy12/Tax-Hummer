@@ -4,6 +4,7 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Mouse } from 'lucide-react';
+import CoFounderComponent from "../components/CoFounderComponet";
 
 // Lazy Load Components
 const HeadingWithIllustration = lazy(() => import("../components/HeadingWithIllustration"));
@@ -77,6 +78,7 @@ const AboutUsSection = () => {
           <WhyChooseUsUser />
           <MissionVision />
           <FounderSection />
+          <CoFounderComponent/>
         </Suspense>
       </div>
       <Footer />
