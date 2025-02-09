@@ -224,7 +224,7 @@ const TaxCalculator = () => {
             <label className="block">
               <span className="text-gray-700">Financial Year</span>
               <select
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+                className="mt-1 block lg:h-10 w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200"
                 value={formData.financialYear}
                 onChange={(e) => setFormData((prev) => ({ ...prev, financialYear: e.target.value }))}
               >
@@ -236,7 +236,7 @@ const TaxCalculator = () => {
             <label className="block">
               <span className="text-gray-700">Age Group</span>
               <select
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+                className="mt-1 block  lg:h-10 w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200"
                 value={formData.ageGroup}
                 onChange={(e) => setFormData((prev) => ({ ...prev, ageGroup: e.target.value }))}
               >
@@ -265,7 +265,7 @@ const TaxCalculator = () => {
                     value={value || ""}
                     onChange={(e) => handleInputChange("incomeDetails", key, e.target.value)}
                     placeholder="Enter amount"
-                    className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 h-12"
+                    className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 h-12"
                   />
                 </div>
               </label>
@@ -290,7 +290,7 @@ const TaxCalculator = () => {
                     value={value || ""}
                     onChange={(e) => handleInputChange("deductions", key, e.target.value)}
                     placeholder="Enter amount"
-                    className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 h-12"
+                    className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 h-12"
                   />
                 </div>
               </label>
@@ -301,6 +301,7 @@ const TaxCalculator = () => {
         return null
     }
   }
+  
 
   const chartData = [
     { name: "Total Income", value: taxResults.totalIncome },
@@ -316,7 +317,7 @@ const TaxCalculator = () => {
         <div className="flex space-x-4">
           <button
             className={`px-6 py-2 text-lg font-medium transition-colors ${
-              selectedRegime === "new" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600"
+              selectedRegime === "new" ? "text-purple-600 border-b-2 border-purple-600" : "text-gray-600"
             }`}
             onClick={() => setSelectedRegime("new")}
           >
@@ -327,7 +328,7 @@ const TaxCalculator = () => {
           </button>
           <button
             className={`px-6 py-2 text-lg font-medium transition-colors ${
-              selectedRegime === "old" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600"
+              selectedRegime === "old" ? "text-purple-600 border-b-2 border-purple-600" : "text-gray-600"
             }`}
             onClick={() => setSelectedRegime("old")}
           >
@@ -343,7 +344,7 @@ const TaxCalculator = () => {
             <button
               key={index}
               className={`px-4 py-2 text-sm font-medium border-b-2 focus:outline-none transition-colors ${
-                activeTab === index ? "border-blue-600 text-blue-600" : "border-transparent text-gray-600"
+                activeTab === index ? "border-purple-600 text-purple-600" : "border-transparent text-gray-600"
               }`}
               onClick={() => setActiveTab(index)}
             >
@@ -365,14 +366,14 @@ const TaxCalculator = () => {
           )}
           {activeTab < tabs.length - 1 ? (
             <button
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
               onClick={() => setActiveTab((prev) => prev + 1)}
             >
               Continue
             </button>
           ) : (
             <button
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
               onClick={handleCalculate}
             >
               Calculate
