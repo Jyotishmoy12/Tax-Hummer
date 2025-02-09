@@ -60,7 +60,7 @@ const Footer = () => {
             <Link to="/services" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">Services</Link>
             <Link to="/resources" className="block hover:text-lavender-200 transition-colors font-sans text-white hover:text-white">Resources</Link>
             <Link to="/about" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">About</Link>
-            <Link to="/get-started" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">Contact</Link>
+            <Link to="/contact" className="block hover:text-lavender-200 transition-colors font-sans text-white  hover:text-white">Contact</Link>
           </nav>
       
         </div>

@@ -33,7 +33,7 @@ const menuItems = {
   company: [
     { icon: <Building2 className="w-5 h-5" />, label: 'About Us', to: '/about' },
     { icon: <Users className="w-5 h-5" />, label: 'Careers', to: '/careers' },
-    { icon: <MessageSquare className="w-5 h-5" />, label: 'Contact', to: '/get-started' },
+    { icon: <MessageSquare className="w-5 h-5" />, label: 'Contact', to: '/contact' },
     { icon: <FaQuestionCircle className="w-5 h-5" />, label: 'FAQ', to: '/faq' },
   ]
 };
