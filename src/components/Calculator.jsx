@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CalculatorComponent() {
+const CalculatorComponent=()=> {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = ["Basic Details", "Income Details", "Deductions"];
@@ -120,3 +120,5 @@ export default function CalculatorComponent() {
     </div>
   );
 }
+
+export default CalculatorComponent
