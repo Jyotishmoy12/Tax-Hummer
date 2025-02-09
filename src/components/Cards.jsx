@@ -147,7 +147,7 @@ const ServiceCards = () => {
       iconBgColor: 'bg-green-100',
       variant: 'green',
       onButtonClick: () => {
-        navigate('/tax-calculator');
+        navigate('/taxcalculator');
       },
       hoverContent: [
         'Latest tax regulations',

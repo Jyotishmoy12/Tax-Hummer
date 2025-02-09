@@ -44,12 +44,6 @@ const FounderSection = () => {
               <FaEnvelope className="text-purple-600" /> Ceo@taxhummer.in
             </a>
             <a
-              href="tel:+91-9876543210"
-              className="flex items-center gap-2 hover:text-purple-800 transition"
-            >
-              <FaPhone className="text-purple-600" /> +91-9101306796
-            </a>
-            <a
               href="https://www.linkedin.com/in/bikash-pandey-601b3519a/"
               target="_blank"
               rel="noopener noreferrer"

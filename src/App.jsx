@@ -8,6 +8,7 @@ import ContactForm from './pages/ContactPage'
 import ScrollToTop from './components/ScrollToTop'
 import FAQpage from './pages/FAQpage'
 import Plans from './pages/Plans'
+import TaxCalculator from './pages/TaxCalculator'
 const App = () => {
   return (
     <Router>
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/faq" element={<FAQpage />} /> 
         <Route path ="/plans" element={<Plans />} />
+        <Route path="/taxcalculator" element={<TaxCalculator />} />
       </Routes>
     </Router>
   )
