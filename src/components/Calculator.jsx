@@ -1,9 +1,49 @@
-import { useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts';
+import { useState } from "react"
+import { BarChart, Bar, YAxis, ResponsiveContainer, Cell } from "recharts"
+import { Info } from "lucide-react"
+
+const InfoTooltip = ({ content }) => {
+  return (
+    <div className="group relative inline-block">
+      <Info className="h-4 w-4 text-gray-400 cursor-pointer" />
+      <div className="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full w-64 opacity-0 transition-opacity group-hover:opacity-100">
+        <div className="flex items-center justify-center">
+          <div className="bg-black text-white text-sm rounded-lg py-2 px-3">{content}</div>
+        </div>
+        <div className="absolute left-1/2 -translate-x-1/2 top-full">
+          <div className="w-2 h-2 bg-black rotate-45" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const getTooltipContent = (field) => {
+  const tooltips = {
+    salary: "Your total annual salary including basic pay, HRA, and other allowances",
+    exemptAllowances: "Allowances exempt from tax like LTA, HRA, etc.",
+    interestIncome: "Interest earned from savings accounts, fixed deposits, etc.",
+    homeLoanSelfOccupied: "Interest paid on home loan for self-occupied property",
+    rentalIncome: "Income received from renting out property",
+    homeLoanLetOut: "Interest paid on home loan for let-out property",
+    digitalAssets: "Income from transfer of virtual digital assets",
+    otherIncome: "Any other taxable income not covered above",
+    // Deductions tooltips
+    basic80C: "Investments and expenses under section 80C like PPF, ELSS, etc.",
+    deposits80TTA: "Interest earned from savings account",
+    medical80D: "Medical insurance premium paid for self and family",
+    donations80G: "Donations to approved charitable institutions",
+    housing80EEA: "Additional interest deduction on home loan",
+    nps80CCD: "Contribution to National Pension System under 80CCD(1)",
+    nps80CCD2: "Employer's contribution to National Pension System",
+    otherDeduction: "Other eligible deductions under Chapter VI-A",
+  }
+  return tooltips[field] || "Enter details here"
+}
 
 const TaxCalculator = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [showDashboard, setShowDashboard] = useState(false);
+  const [activeTab, setActiveTab] = useState(0)
+  const [showDashboard, setShowDashboard] = useState(false)
   const [formData, setFormData] = useState({
     financialYear: "FY 2025-2026",
     ageGroup: "0-60",
@@ -15,7 +55,7 @@ const TaxCalculator = () => {
       rentalIncome: 0,
       homeLoanLetOut: 0,
       digitalAssets: 0,
-      otherIncome: 0
+      otherIncome: 0,
     },
     deductions: {
       basic80C: 0,
@@ -25,9 +65,9 @@ const TaxCalculator = () => {
       housing80EEA: 0,
       nps80CCD: 0,
       nps80CCD2: 0,
-      otherDeduction: 0
-    }
-  });
+      otherDeduction: 0,
+    },
+  })
 
   const [taxResults, setTaxResults] = useState({
     totalIncome: 0,
@@ -38,92 +78,116 @@ const TaxCalculator = () => {
     taxPayable: 0,
     incomeTax: 0,
     surcharge: 0,
-    healthEducationCess: 0
-  });
+    healthEducationCess: 0,
+  })
 
-  const [selectedRegime, setSelectedRegime] = useState('new');
+  const [selectedRegime, setSelectedRegime] = useState("new")
 
   const calculateTotalIncome = () => {
-    return Object.values(formData.incomeDetails).reduce((a, b) => a + (Number(b) || 0), 0);
-  };
+    return Object.values(formData.incomeDetails).reduce((a, b) => a + (Number(b) || 0), 0)
+  }
 
   const calculateDeductions = () => {
-    if (selectedRegime === 'new') {
-      return 50000; // Only standard deduction in new regime
+    if (selectedRegime === "new") {
+      return 0 // New regime has no deductions as per formula
     }
-    const chapterVIA = Object.values(formData.deductions).reduce((a, b) => a + (Number(b) || 0), 0);
-    return 50000 + chapterVIA; // Standard deduction + other deductions in old regime
-  };
+    const chapterVIA = Object.values(formData.deductions).reduce((a, b) => a + (Number(b) || 0), 0)
+    return 50000 + chapterVIA // Standard deduction + other deductions in old regime
+  }
 
   const calculateTax = (taxableIncome) => {
-    let tax = 0;
-    
-    if (selectedRegime === 'new') {
-      // New regime tax slabs as per the image
+    let tax = 0
+
+    if (selectedRegime === "new") {
+      // New regime tax slabs as per the formula
       if (taxableIncome <= 250000) {
-        tax = 0;
+        tax = 0
       } else if (taxableIncome <= 500000) {
-        tax = (taxableIncome - 250000) * 0.05;
+        tax = (taxableIncome - 250000) * 0.05
       } else if (taxableIncome <= 750000) {
-        tax = 12500 + (taxableIncome - 500000) * 0.10;
+        tax = 12500 + (taxableIncome - 500000) * 0.1
       } else if (taxableIncome <= 1000000) {
-        tax = 37500 + (taxableIncome - 750000) * 0.15;
+        tax = 37500 + (taxableIncome - 750000) * 0.15
       } else if (taxableIncome <= 1250000) {
-        tax = 75000 + (taxableIncome - 1000000) * 0.20;
+        tax = 75000 + (taxableIncome - 1000000) * 0.2
       } else if (taxableIncome <= 1500000) {
-        tax = 125000 + (taxableIncome - 1250000) * 0.25;
+        tax = 125000 + (taxableIncome - 1250000) * 0.25
       } else {
-        tax = 187500 + (taxableIncome - 1500000) * 0.30;
+        tax = 187500 + (taxableIncome - 1500000) * 0.3
       }
     } else {
-      // Old regime tax slabs as per the image
+      // Old regime tax slabs remain correct
       if (taxableIncome <= 250000) {
-        tax = 0;
+        tax = 0
       } else if (taxableIncome <= 500000) {
-        tax = (taxableIncome - 250000) * 0.05;
+        tax = (taxableIncome - 250000) * 0.05
       } else if (taxableIncome <= 1000000) {
-        tax = 12500 + (taxableIncome - 500000) * 0.20;
+        tax = 12500 + (taxableIncome - 500000) * 0.2
       } else {
-        tax = 112500 + (taxableIncome - 1000000) * 0.30;
+        tax = 112500 + (taxableIncome - 1000000) * 0.3
       }
     }
-    
-    return tax;
-  };
+
+    return tax
+  }
 
   const handleCalculate = () => {
-    const totalIncome = calculateTotalIncome();
-    const totalDeductions = calculateDeductions();
-    const taxableIncome = Math.max(0, totalIncome - totalDeductions);
-    const incomeTax = calculateTax(taxableIncome);
-    const healthEducationCess = Math.round(incomeTax * 0.04);
-    
+    const totalIncome = calculateTotalIncome()
+    const totalDeductions = calculateDeductions()
+    const taxableIncome = Math.max(0, totalIncome - totalDeductions)
+    const incomeTax = calculateTax(taxableIncome)
+    const healthEducationCess = Math.round(incomeTax * 0.04)
+
     setTaxResults({
       totalIncome,
       exemptAllowances: Number(formData.incomeDetails.exemptAllowances),
       standardDeduction: 50000,
-      chapterVIA: selectedRegime === 'new' ? 0 : totalDeductions - 50000,
+      chapterVIA: selectedRegime === "new" ? 0 : totalDeductions - 50000,
       taxableIncome,
       taxPayable: incomeTax + healthEducationCess,
       incomeTax,
       surcharge: 0,
-      healthEducationCess
-    });
-    
-    setShowDashboard(true);
-  };
+      healthEducationCess,
+    })
+
+    setShowDashboard(true)
+  }
 
   const handleInputChange = (category, field, value) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [category]: {
         ...prev[category],
-        [field]: Number(value)
-      }
-    }));
-  };
+        [field]: Number(value),
+      },
+    }))
+  }
 
-  const tabs = ["Basic Details", "Income Details", "Deductions"];
+  const tabs = ["Basic Details", "Income Details", "Deductions"]
+
+  const formatDeductionLabel = (key) => {
+    // Handle special cases for different deduction types
+    switch (key) {
+      case "basic80C":
+        return "Basic - 80C"
+      case "deposits80TTA":
+        return "Deposits - 80TTA"
+      case "medical80D":
+        return "Medical - 80D"
+      case "donations80G":
+        return "Donations - 80G"
+      case "housing80EEA":
+        return "Housing - 80EEA"
+      case "nps80CCD":
+        return "NPS - 80CCD"
+      case "nps80CCD2":
+        return "NPS - 80CCD(2)"
+      case "otherDeduction":
+        return "Other Deduction"
+      default:
+        return key
+    }
+  }
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -132,10 +196,10 @@ const TaxCalculator = () => {
           <div className="space-y-4">
             <label className="block">
               <span className="text-gray-700">Financial Year</span>
-              <select 
+              <select
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
                 value={formData.financialYear}
-                onChange={(e) => setFormData(prev => ({...prev, financialYear: e.target.value}))}
+                onChange={(e) => setFormData((prev) => ({ ...prev, financialYear: e.target.value }))}
               >
                 <option>FY 2025-2026</option>
                 <option>FY 2024-2025</option>
@@ -144,10 +208,10 @@ const TaxCalculator = () => {
 
             <label className="block">
               <span className="text-gray-700">Age Group</span>
-              <select 
+              <select
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
                 value={formData.ageGroup}
-                onChange={(e) => setFormData(prev => ({...prev, ageGroup: e.target.value}))}
+                onChange={(e) => setFormData((prev) => ({ ...prev, ageGroup: e.target.value }))}
               >
                 <option>0-60</option>
                 <option>60-80</option>
@@ -155,14 +219,15 @@ const TaxCalculator = () => {
               </select>
             </label>
           </div>
-        );
+        )
       case 1:
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {Object.entries(formData.incomeDetails).map(([key, value], index) => (
               <label key={index} className="block">
-                <span className="text-gray-700">
-                  {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                <span className="text-gray-700 flex items-center gap-2">
+                  {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}
+                  <InfoTooltip content={getTooltipContent(key)} />
                 </span>
                 <div className="relative mt-1">
                   <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
@@ -170,8 +235,8 @@ const TaxCalculator = () => {
                   </span>
                   <input
                     type="number"
-                    value={value || ''}
-                    onChange={(e) => handleInputChange('incomeDetails', key, e.target.value)}
+                    value={value || ""}
+                    onChange={(e) => handleInputChange("incomeDetails", key, e.target.value)}
                     placeholder="Enter amount"
                     className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 h-12"
                   />
@@ -179,14 +244,15 @@ const TaxCalculator = () => {
               </label>
             ))}
           </div>
-        );
+        )
       case 2:
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {Object.entries(formData.deductions).map(([key, value], index) => (
               <label key={index} className="block">
-                <span className="text-gray-700">
-                  {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                <span className="text-gray-700 flex items-center gap-2">
+                  {formatDeductionLabel(key)}
+                  <InfoTooltip content={getTooltipContent(key)} />
                 </span>
                 <div className="relative mt-1">
                   <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
@@ -194,8 +260,8 @@ const TaxCalculator = () => {
                   </span>
                   <input
                     type="number"
-                    value={value || ''}
-                    onChange={(e) => handleInputChange('deductions', key, e.target.value)}
+                    value={value || ""}
+                    onChange={(e) => handleInputChange("deductions", key, e.target.value)}
                     placeholder="Enter amount"
                     className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 h-12"
                   />
@@ -203,18 +269,18 @@ const TaxCalculator = () => {
               </label>
             ))}
           </div>
-        );
+        )
       default:
-        return null;
+        return null
     }
-  };
+  }
 
   const chartData = [
-    { name: 'Total Income', value: taxResults.totalIncome },
-    { name: 'Deduction', value: taxResults.standardDeduction + taxResults.chapterVIA },
-    { name: 'Taxable Income', value: taxResults.taxableIncome },
-    { name: 'Tax Payable', value: taxResults.taxPayable }
-  ];
+    { name: "Total Income", value: taxResults.totalIncome },
+    { name: "Deduction", value: taxResults.standardDeduction + taxResults.chapterVIA },
+    { name: "Taxable Income", value: taxResults.taxableIncome },
+    { name: "Tax Payable", value: taxResults.taxPayable },
+  ]
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6 my-40">
@@ -222,23 +288,21 @@ const TaxCalculator = () => {
       <div className="border-b pb-2">
         <div className="flex space-x-4">
           <button
-            className={`px-6 py-2 text-lg font-medium ${
-              selectedRegime === 'new' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600'
+            className={`px-6 py-2 text-lg font-medium transition-colors ${
+              selectedRegime === "new" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600"
             }`}
-            onClick={() => setSelectedRegime('new')}
+            onClick={() => setSelectedRegime("new")}
           >
             New regime
-            {selectedRegime === 'new' && (
-              <span className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
-                Recommended
-              </span>
+            {selectedRegime === "new" && (
+              <span className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Recommended</span>
             )}
           </button>
           <button
-            className={`px-6 py-2 text-lg font-medium ${
-              selectedRegime === 'old' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600'
+            className={`px-6 py-2 text-lg font-medium transition-colors ${
+              selectedRegime === "old" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600"
             }`}
-            onClick={() => setSelectedRegime('old')}
+            onClick={() => setSelectedRegime("old")}
           >
             Old regime
           </button>
@@ -251,10 +315,8 @@ const TaxCalculator = () => {
           {tabs.map((tab, index) => (
             <button
               key={index}
-              className={`px-4 py-2 text-sm font-medium border-b-2 focus:outline-none ${
-                activeTab === index
-                  ? 'border-blue-600 text-blue-600'
-                  : 'border-transparent text-gray-600'
+              className={`px-4 py-2 text-sm font-medium border-b-2 focus:outline-none transition-colors ${
+                activeTab === index ? "border-blue-600 text-blue-600" : "border-transparent text-gray-600"
               }`}
               onClick={() => setActiveTab(index)}
             >
@@ -268,7 +330,7 @@ const TaxCalculator = () => {
         <div className="flex justify-between p-6 border-t">
           {activeTab > 0 && (
             <button
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200"
+              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors"
               onClick={() => setActiveTab((prev) => prev - 1)}
             >
               Back
@@ -276,14 +338,14 @@ const TaxCalculator = () => {
           )}
           {activeTab < tabs.length - 1 ? (
             <button
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
               onClick={() => setActiveTab((prev) => prev + 1)}
             >
               Continue
             </button>
           ) : (
             <button
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
               onClick={handleCalculate}
             >
               Calculate
@@ -294,75 +356,113 @@ const TaxCalculator = () => {
 
       {/* Results Dashboard */}
       {showDashboard && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Chart */}
-          <div className="md:col-span-1 bg-white p-6 rounded-lg shadow-md h-96">
-            <div className="h-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData}>
-                  <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
-                  <YAxis />
-                  <Bar dataKey="value" fill="#93C5FD">
-                    {chartData.map((entry, index) => (
-                      <Cell 
-                        key={`cell-${index}`} 
-                        fill={index === 3 ? '#4ADE80' : '#93C5FD'} // Making Tax Payable green
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+        <div className="space-y-6">
+          {/* Income Summary Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-gray-600">Total income</h3>
+              <p className="text-3xl font-bold mt-2">₹{taxResults.totalIncome.toLocaleString()}</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-gray-600">Taxable income</h3>
+              <p className="text-3xl font-bold mt-2">₹{taxResults.taxableIncome.toLocaleString()}</p>
             </div>
           </div>
 
+          {/* Chart and Details */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Chart */}
+            <div className="md:col-span-1 bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-4">Tax Breakdown</h3>
 
-          {/* Summary */}
-          <div className="md:col-span-2 bg-gray-50 p-6 rounded-lg">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Total income</h3>
-                <p className="text-3xl font-bold">₹{taxResults.totalIncome.toLocaleString()}</p>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={chartData} margin={{ top: 20, right: 30, left: 65, bottom: 5 }}>
+                    <YAxis tickFormatter={(value) => `₹${(value / 1000).toFixed(0)}K`} tick={{ fontSize: 12 }} />
+                    <Bar dataKey="value" barSize={40}>
+                      {chartData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={
+                            index === 0
+                              ? "#60A5FA"
+                              : // Total Income
+                                index === 1
+                                ? "#F59E0B"
+                                : // Deduction
+                                  index === 2
+                                  ? "#10B981"
+                                  : // Taxable Income
+                                    "#6366F1" // Tax Payable
+                          }
+                        />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
               </div>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Exemption and deduction</h3>
-                <p className="text-3xl font-bold">₹{(taxResults.standardDeduction + taxResults.chapterVIA).toLocaleString()}</p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between">
-                    <span>Exempt Allowances</span>
-                    <span>₹{taxResults.exemptAllowances.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Standard Deductions</span>
-                    <span>₹{taxResults.standardDeduction.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Chapter VI A</span>
-                    <span>₹{taxResults.chapterVIA.toLocaleString()}</span>
-                  </div>
+              {/* Chart Legend */}
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                <div className="flex items-center">
+                  <div className="w-4 h-4 bg-blue-400 rounded mr-2"></div>
+                  <span className="text-sm">Total Income</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-4 h-4 bg-amber-500 rounded mr-2"></div>
+                  <span className="text-sm">Deductions</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-4 h-4 bg-emerald-500 rounded mr-2"></div>
+                  <span className="text-sm">Taxable Income</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-4 h-4 bg-indigo-500 rounded mr-2"></div>
+                  <span className="text-sm">Tax Payable</span>
                 </div>
               </div>
+            </div>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Taxable income</h3>
-                <p className="text-3xl font-bold">₹{taxResults.taxableIncome.toLocaleString()}</p>
-              </div>
+            {/* Summary */}
+            <div className="md:col-span-2 bg-gray-50 p-6 rounded-lg">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Exemption and deduction</h3>
+                  <p className="text-3xl font-bold">
+                    ₹{(taxResults.standardDeduction + taxResults.chapterVIA).toLocaleString()}
+                  </p>
+                  <div className="mt-4 space-y-2">
+                    <div className="flex justify-between">
+                      <span>Exempt Allowances</span>
+                      <span>₹{taxResults.exemptAllowances.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Standard Deductions</span>
+                      <span>₹{taxResults.standardDeduction.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Chapter VI A</span>
+                      <span>₹{taxResults.chapterVIA.toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Tax payable</h3>
-                <p className="text-3xl font-bold">₹{taxResults.taxPayable.toLocaleString()}</p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between">
-                  <span>Income tax</span>
-                    <span>₹{taxResults.incomeTax.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Surcharge</span>
-                    <span>₹{taxResults.surcharge.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Health and education cess</span>
-                    <span>₹{taxResults.healthEducationCess.toLocaleString()}</span>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Tax payable</h3>
+                  <p className="text-3xl font-bold">₹{taxResults.taxPayable.toLocaleString()}</p>
+                  <div className="mt-4 space-y-2">
+                    <div className="flex justify-between">
+                      <span>Income tax</span>
+                      <span>₹{taxResults.incomeTax.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Surcharge</span>
+                      <span>₹{taxResults.surcharge.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Health and education cess</span>
+                      <span>₹{taxResults.healthEducationCess.toLocaleString()}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -371,7 +471,8 @@ const TaxCalculator = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default TaxCalculator;
+export default TaxCalculator
+
