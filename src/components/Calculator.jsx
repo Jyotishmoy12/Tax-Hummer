@@ -216,6 +216,32 @@ const TaxCalculator = () => {
     }
   }
 
+  const formatIncomeDetailsLabel = (key) => {
+    // Handle special cases for different income types
+    switch (key) {
+      case "salary":
+        return "Income from Salary"
+      case "exemptAllowances":
+        return "Exempt Allowances"
+      case "interestIncome":
+        return "Income from interest"
+      case "homeLoanSelfOccupied":
+        return "Interest on home loan - Self occupied"
+      case "rentalIncome":
+        return "Rental income received"
+      case "homeLoanLetOut":
+        return "Interest on Home Loan- Let Out"
+      case "digitalAssets":
+        return "Income from digital assets"
+      case "otherIncome":
+        return "Other Income"
+      default:
+        return key
+    }
+  }
+  
+
+  
   const renderTabContent = () => {
     switch (activeTab) {
       case 0:
@@ -253,11 +279,11 @@ const TaxCalculator = () => {
             {Object.entries(formData.incomeDetails).map(([key, value], index) => (
               <label key={index} className="block">
                 <span className="text-gray-700 flex items-center gap-2">
-                  {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}
+                {formatIncomeDetailsLabel(key)} 
                   <InfoTooltip content={getTooltipContent(key)} />
                 </span>
                 <div className="relative mt-1">
-                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                <span className="absolute inset-y-0 left-0 pl-2 flex items-center w-8 pointer-events-none text-white font-bold bg-purple-600 rounded-lg">
                     ₹
                   </span>
                   <input
@@ -265,7 +291,7 @@ const TaxCalculator = () => {
                     value={value || ""}
                     onChange={(e) => handleInputChange("incomeDetails", key, e.target.value)}
                     placeholder="Enter amount"
-                    className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 h-12"
+                    className="pl-12 block w-full h-12 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring focus:ring-purple-200"
                   />
                 </div>
               </label>
@@ -282,15 +308,15 @@ const TaxCalculator = () => {
                   <InfoTooltip content={getTooltipContent(key)} />
                 </span>
                 <div className="relative mt-1">
-                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                <span className="absolute inset-y-0 left-0 pl-2 flex items-center w-8 pointer-events-none text-white font-bold bg-purple-600 rounded-lg">
                     ₹
                   </span>
                   <input
                     type="number"
                     value={value || ""}
-                    onChange={(e) => handleInputChange("deductions", key, e.target.value)}
+                    onChange={(e) => handleInputChange("incomeDetails", key, e.target.value)}
                     placeholder="Enter amount"
-                    className="pl-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 h-12"
+                    className="pl-12 block w-full h-12 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring focus:ring-purple-200"
                   />
                 </div>
               </label>
@@ -315,25 +341,31 @@ const TaxCalculator = () => {
       {/* Regime Selection */}
       <div className="border-b pb-2">
         <div className="flex space-x-4">
-          <button
-            className={`px-6 py-2 text-lg font-medium transition-colors ${
-              selectedRegime === "new" ? "text-purple-600 border-b-2 border-purple-600" : "text-gray-600"
-            }`}
-            onClick={() => setSelectedRegime("new")}
-          >
-            New regime
-            {selectedRegime === "new" && (
-              <span className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Recommended</span>
-            )}
-          </button>
-          <button
-            className={`px-6 py-2 text-lg font-medium transition-colors ${
-              selectedRegime === "old" ? "text-purple-600 border-b-2 border-purple-600" : "text-gray-600"
-            }`}
-            onClick={() => setSelectedRegime("old")}
-          >
-            Old regime
-          </button>
+        <button
+        className={`px-6 py-2 text-lg font-medium transition-colors duration-300 ease-in-out transform rounded-3xl ${
+          selectedRegime === "new" 
+            ? "bg-purple-600 text-white border-b-2 border-purple-600"
+            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+        }`}
+        onClick={() => setSelectedRegime("new")}
+      >
+        New regime
+        {selectedRegime === "new" && (
+          <span className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Recommended</span>
+        )}
+      </button>
+
+      <button
+        className={`px-6 py-2 text-lg font-medium transition-colors duration-300 ease-in-out transform rounded-2xl ${
+          selectedRegime === "old" 
+            ? "bg-purple-600 text-white border-b-2 border-purple-600"
+            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+        }`}
+        onClick={() => setSelectedRegime("old")}
+      >
+        Old regime
+      </button>
+
         </div>
       </div>
 
@@ -344,7 +376,7 @@ const TaxCalculator = () => {
             <button
               key={index}
               className={`px-4 py-2 text-sm font-medium border-b-2 focus:outline-none transition-colors ${
-                activeTab === index ? "border-purple-600 text-purple-600" : "border-transparent text-gray-600"
+                activeTab === index ? "bg-purple-600 text-white border-b-2 border-purple-60 rounded-3xl" : "border-transparent text-gray-600"
               }`}
               onClick={() => setActiveTab(index)}
             >

@@ -49,9 +49,9 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    const serviceID = "service_795rm1q";       // ✅ Replace with your Service ID
-    const templateID = "template_3yoau19";     // ✅ Replace with your Template ID
-    const publicKey = "eYdPp2gl41DbXPN05";     // ✅ Replace with your Public Key
+    const serviceID = "service_oktgntk";       // ✅ Replace with your Service ID
+    const templateID = "template_e1w7olu";     // ✅ Replace with your Template ID
+    const publicKey = "5er9h3pWmffDPspVO";     // ✅ Replace with your Public Key
 
     try {
       await emailjs.send(serviceID, templateID, formData, publicKey);
