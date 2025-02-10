@@ -311,7 +311,7 @@ const TaxCalculator = () => {
   ]
 
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-6 my-40">
+    <div className="max-w-6xl mx-auto p-6 space-y-6 my-25 ">
       {/* Regime Selection */}
       <div className="border-b pb-2">
         <div className="flex space-x-4">
@@ -338,7 +338,7 @@ const TaxCalculator = () => {
       </div>
 
       {/* Calculator Form */}
-      <div className="bg-white shadow-md rounded-lg">
+      <div className="bg-white rounded-4xl shadow-md">
         <div className="flex space-x-4 border-b px-6 pt-6">
           {tabs.map((tab, index) => (
             <button
@@ -503,4 +503,3 @@ const TaxCalculator = () => {
 }
 
 export default TaxCalculator
-
