@@ -10,25 +10,25 @@ const AnimatedSocialIcons = () => {
   const socialLinks = [
     { 
       Icon: FaXTwitter, 
-      href: "#", 
+      href: "https://x.com/taxhummer?s=21", 
       color: "hover:text-black",
       hoverEffect: "group hover:rotate-12 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2  text-white"
     },
     { 
       Icon: Facebook, 
-      href: "#", 
+      href: "https://www.facebook.com/share/1ECf1XdgmB/?mibextid=wwXIfr", 
       color: "hover:text-blue-600",
       hoverEffect: "group hover:rotate-6 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2  text-white"
     },
     { 
       Icon: Linkedin, 
-      href: "#", 
+      href: "https://www.linkedin.com/company/tax-hummer/?viewAsMember=true", 
       color: "hover:text-blue-700",
       hoverEffect: "group hover:-rotate-12 hover:scale-110 hover:bg-blue-50/20 rounded-full p-2  text-white"
     },
     { 
       Icon: Instagram, 
-      href: "#", 
+      href: "https://www.instagram.com/taxhummer/?igsh=ZDJvMGMzMGdyOW14&utm_source=qr#", 
       color: "hover:text-pink-500",
       hoverEffect: "group hover:rotate-6 hover:scale-110 hover:bg-pink-50/20 rounded-full p-2  text-white"
     }

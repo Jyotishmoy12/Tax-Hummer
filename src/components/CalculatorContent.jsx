@@ -8,12 +8,12 @@ const CalculatorContent = () => {
       <div className="bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-lg p-6">
         <div className="flex items-center gap-3 mb-4">
           <Calculator className="w-8 h-8 text-purple-700" />
-          <h1 className="text-3xl font-bold text-purple-900">
+          <h1 className="text-3xl font-bold text-purple-900 font-[gliroy]">
             Simplify Your Tax Calculation
           </h1>
         </div>
-        <p className="text-gray-600 text-lg">
-          In India, taxpayers can choose between the Old Tax Regime and the New Tax Regime, both offering different tax rates and benefits. Understanding your tax liability can be complex, but an Income Tax Calculator helps you compare both regimes and make an informed decision.
+        <p className="text-gray-500 text-lg font-[gliroy]">
+          In India, taxpayers can choose between the <span className="text-purple-700">Old Tax Regime </span> and the <span className="text-purple-700">New Tax Regime </span>, both offering different tax rates and benefits. Understanding your tax liability can be complex, but an Income Tax Calculator helps you compare both regimes and make an informed decision.
         </p>
       </div>
 
@@ -21,11 +21,11 @@ const CalculatorContent = () => {
       <div className="bg-white rounded-xl shadow-lg p-6">
         <div className="flex items-center gap-3 mb-6">
           <Info className="w-6 h-6 text-purple-700" />
-          <h2 className="text-2xl font-semibold text-purple-900">
+          <h2 className="text-2xl font-semibold font-[gliroy] text-purple-900">
             Why Use an Income Tax Calculator?
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 font-[gliroy]">
           {[
             { title: 'Accurate Tax Estimation', desc: 'Eliminates manual errors' },
             { title: 'Fast & Efficient', desc: 'Get results in seconds' },
@@ -42,9 +42,9 @@ const CalculatorContent = () => {
 
       {/* Latest Updates Section */}
       <div className="bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-2xl font-semibold text-purple-900 mb-4">Latest Budget 2025 Updates</h2>
+        <h2 className="text-2xl font-semibold text-purple-900 mb-4 font-[gliroy]">Latest Budget 2025 Updates</h2>
         <div className="bg-purple-100 border-l-4 border-purple-500 p-4 rounded">
-          <p className="text-purple-900 font-medium">
+          <p className="text-purple-900 font-medium font-[gliroy]">
             No tax on income up to ₹12 lakh under the new regime.
           </p>
         </div>
@@ -52,18 +52,18 @@ const CalculatorContent = () => {
 
       {/* Tax Slabs Table */}
       <div className="bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-2xl font-semibold text-purple-900 mb-4">
+        <h2 className="text-2xl font-semibold text-purple-900 mb-4 font-[gliroy]">
           Updated Tax Slabs for FY 2025-26 (AY 2026-27):
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-purple-50">
               <tr>
-                <th className="px-6 py-3 text-left text-purple-900 font-semibold">Income Slab</th>
-                <th className="px-6 py-3 text-left text-purple-900 font-semibold">Tax Rate</th>
+                <th className="px-6 py-3 text-left text-purple-900 font-semibold font-[gliroy]">Income Slab</th>
+                <th className="px-6 py-3 text-left text-purple-900 font-semibold font-[gliroy]">Tax Rate</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-purple-100">
+            <tbody className="divide-y divide-purple-100 font-[gliroy]">
               {[
                 ['₹0 - ₹4,00,000', 'Nil'],
                 ['₹4,00,001 - ₹8,00,000', '5%'],
@@ -85,10 +85,10 @@ const CalculatorContent = () => {
 
       {/* How to Use Section */}
       <div className="bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-2xl font-semibold text-purple-900 mb-4">
+        <h2 className="text-2xl font-semibold text-purple-900 mb-4 font-[gliroy]">
           How to Use the Income Tax Calculator?
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 font-[gliroy]">
           {[
             'Select the Financial Year (FY) for which you want to calculate tax.',
             'Choose your age category (as tax slabs differ in the old regime).',
@@ -109,22 +109,22 @@ const CalculatorContent = () => {
 
       {/* Example Calculation */}
       <div className="bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-2xl font-semibold text-purple-900 mb-4">
+        <h2 className="text-2xl font-semibold text-purple-900 mb-4 font-[gliroy]">
           Example: Tax Calculation for Salary Income
         </h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-gray-700 mb-4 font-[gliroy]">
           Case Study: Bikash earns an annual salary of ₹12,00,000. His taxable income breakdown:
         </p>
         <div className="overflow-x-auto mb-8">
           <table className="w-full">
             <thead className="bg-purple-50">
               <tr>
-                <th className="px-6 py-3 text-left text-purple-900 font-semibold">Income Component</th>
-                <th className="px-6 py-3 text-left text-purple-900 font-semibold">Old Regime (₹)</th>
-                <th className="px-6 py-3 text-left text-purple-900 font-semibold">New Regime (₹)</th>
+                <th className="px-6 py-3 text-left text-purple-900 font-semibold font-[gliroy]">Income Component</th>
+                <th className="px-6 py-3 text-left text-purple-900 font-semibold font-[gliroy]">Old Regime (₹)</th>
+                <th className="px-6 py-3 text-left text-purple-900 font-semibold font-[gliroy]">New Regime (₹)</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-purple-100">
+            <tbody className="divide-y divide-purple-100 font-[gliroy]">
               {[
                 ['Basic Salary', '12,00,000', '12,00,000'],
                 ['HRA', '2,40,000 (Exempt)', '6,00,000'],
@@ -145,8 +145,8 @@ const CalculatorContent = () => {
 
         {/* Tax Saving Investments */}
         <div className="bg-purple-50 rounded-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold text-purple-900 mb-4">Tax-Saving Investments</h3>
-          <div className="grid md:grid-cols-2 gap-4">
+          <h3 className="text-xl font-semibold text-purple-900 mb-4 font-[gliroy]">Tax-Saving Investments</h3>
+          <div className="grid md:grid-cols-2 gap-4 font-[gliroy]">
             {[
               { title: 'PPF', amount: '₹50,000' },
               { title: 'ELSS', amount: '₹20,000' },
@@ -166,39 +166,39 @@ const CalculatorContent = () => {
 
         {/* Final Calculation */}
         <div className="bg-purple-100 rounded-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold text-purple-900 mb-4">Final Tax Calculation</h3>
+          <h3 className="text-xl font-semibold text-purple-900 mb-4 font-[gliroy]">Final Tax Calculation</h3>
           <div className="space-y-3">
             <p className="text-gray-700">
-              <span className="font-semibold text-purple-900">Old Regime Tax Payable:</span> ₹2,73,000
+              <span className="font-semibold text-purple-900 font-[gliroy]">Old Regime Tax Payable:</span> ₹2,73,000
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold text-purple-900">New Regime Tax Payable:</span> ₹2,83,504
+              <span className="font-semibold text-purple-900 font-[gliroy]">New Regime Tax Payable:</span> ₹2,83,504
             </p>
           </div>
         </div>
 
         {/* Regime Comparison */}
         <div className="bg-purple-50 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-purple-900 mb-4">Old vs. New Tax Regime: Which One to Choose?</h3>
+          <h3 className="text-xl font-semibold text-purple-900 mb-4 font-[gliroy]">Old vs. New Tax Regime: Which One to Choose?</h3>
           <div className="space-y-4">
             <div className="flex items-start gap-2">
               <AlertCircle className="w-5 h-5 text-purple-700 mt-1" />
               <div>
-                <span className="font-semibold text-purple-900">Old Regime</span>
-                <p className="text-gray-700">Suitable for those who make tax-saving investments.</p>
+                <span className="font-semibold text-purple-900 font-[gliroy]">Old Regime</span>
+                <p className="text-gray-700 font-[gliroy]">Suitable for those who make tax-saving investments.</p>
               </div>
             </div>
             <div className="flex items-start gap-2">
               <AlertCircle className="w-5 h-5 text-purple-700 mt-1" />
               <div>
-                <span className="font-semibold text-purple-900">New Regime</span>
+                <span className="font-semibold text-purple-900 font-[gliroy]">New Regime</span>
                 <p className="text-gray-700">Ideal for those who prefer lower tax rates without deductions.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <p className="text-gray-700 mt-6">
+        <p className="text-gray-700 mt-6 font-[gliroy]">
           Since Bikash has multiple tax-saving investments, the <span className="font-semibold text-purple-900">Old Regime</span> is more beneficial for him. You can also calculate and compare your tax to determine the best option!
         </p>
       </div>
@@ -207,32 +207,32 @@ const CalculatorContent = () => {
       <div className="bg-white rounded-xl shadow-lg p-6">
         <div className="flex items-center gap-3 mb-4">
           <HelpCircle className="w-6 h-6 text-purple-700" />
-          <h2 className="text-2xl font-semibold text-purple-900">
+          <h2 className="text-2xl font-semibold text-purple-900 font-[gliroy]">
             Additional Tax Information
           </h2>
         </div>
         <div className="space-y-4">
           <div className="bg-purple-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-purple-900 mb-2">Surcharge on High Income</h3>
-            <p className="text-gray-700">10% surcharge for income above ₹50 lakh, 25% surcharge for income above ₹2 crore.</p>
+            <h3 className="font-semibold text-purple-900 mb-2 font-[gliroy]">Surcharge on High Income</h3>
+            <p className="text-gray-700 font-[gliroy]">10% surcharge for income above ₹50 lakh, 25% surcharge for income above ₹2 crore.</p>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-purple-900 mb-2">Health & Education Cess</h3>
-            <p className="text-gray-700">4% extra on total tax payable.</p>
+            <h3 className="font-semibold text-purple-900 mb-2 font-[gliroy]">Health & Education Cess</h3>
+            <p className="text-gray-700 font-[gliroy]">4% extra on total tax payable.</p>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-purple-900 mb-2">Highest surcharge reduced</h3>
-            <p className="text-gray-700">From 37% to 25% under the new regime.</p>
+            <h3 className="font-semibold text-purple-900 mb-2 font-[gliroy]">Highest surcharge reduced</h3>
+            <p className="text-gray-700 font-[gliroy]">From 37% to 25% under the new regime.</p>
           </div>
         </div>
       </div>
 
       {/* FAQs */}
       <div className="bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-2xl font-semibold text-purple-900 mb-6">
+        <h2 className="text-2xl font-semibold text-purple-900 mb-6 font-[gliroy]">
           Frequently Asked Questions (FAQs)
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 font-[gliroy]">
           {[
             {
               q: 'Do I need to file an Income Tax Return (ITR)?',
@@ -257,7 +257,7 @@ const CalculatorContent = () => {
 
       {/* Footer */}
       <div className="text-center py-6">
-        <p className="text-lg text-purple-900 font-medium">
+        <p className="text-lg text-purple-900 font-medium font-[gliroy]">
           Use our Income Tax Calculator today and take control of your tax planning with Tax Hummer! 🚀
         </p>
       </div>
