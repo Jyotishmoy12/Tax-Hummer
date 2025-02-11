@@ -185,10 +185,11 @@ const TaxCalculator = () => {
       ...prev,
       [category]: {
         ...prev[category],
-        [field]: Number(value),
+        [field]: value, // store as string
       },
     }))
   }
+  
 
   const tabs = ["Basic Details", "Income Details", "Deductions"]
 
@@ -314,7 +315,7 @@ const TaxCalculator = () => {
                   <input
                     type="number"
                     value={value || ""}
-                    onChange={(e) => handleInputChange("incomeDetails", key, e.target.value)}
+                    onChange={(e) => handleInputChange("deductions", key, e.target.value)}
                     placeholder="Enter amount"
                     className="pl-12 block w-full h-12 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring focus:ring-purple-200"
                   />
